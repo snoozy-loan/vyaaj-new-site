@@ -1,14 +1,694 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vyaaj — Compare personal loans from 30+ RBI-registered lenders. Rates from 8.5% p.a. Free, instant, secure." />
-    <title>Vyaaj — Compare Personal Loans & Get Lowest Interest Rates</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Vyaaj — Compare personal loans from 30+ RBI-registered lenders. Rates from 8.5% p.a. Free, instant, secure."/>
+<title>Vyaaj — Compare Personal Loans & Get Lowest Interest Rates</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;background:#fff;-webkit-font-smoothing:antialiased}
+
+/* Scroll progress */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#2563eb,#16a34a);z-index:9999;width:0%;transition:width 0.1s}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;background:#fff;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,0.08)}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:26px;font-weight:800;background:linear-gradient(135deg,#2563eb,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+nav{display:flex;gap:2rem}
+nav button{background:none;border:none;cursor:pointer;font-size:14px;color:#555;font-weight:400;transition:color 0.2s;padding:4px 0}
+nav button:hover,nav button.active{color:#2563eb;font-weight:600}
+.btn-primary{background:#2563eb;color:#fff;border:none;border-radius:10px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer;transition:background 0.2s;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:#1d4ed8}
+.btn-white{background:#fff;color:#2563eb;border:none;border-radius:12px;padding:14px 36px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-white:hover{background:#f1f5f9}
+.btn-outline{background:transparent;color:#2563eb;border:1.5px solid #2563eb;border-radius:10px;padding:9px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.btn-outline:hover{background:#eff6ff}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-nav{display:none;background:#fff;border-top:1px solid #f0f0f0;padding:0.5rem 0 1rem}
+.mobile-nav button{display:block;width:100%;text-align:left;padding:12px 24px;background:none;border:none;cursor:pointer;font-size:15px;color:#333}
+.mobile-nav .btn-primary{margin:8px 24px;width:calc(100% - 48px);justify-content:center}
+
+/* Container */
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#eff6ff 0%,#fff 50%,#f0fdf4 100%);min-height:100vh;display:flex;align-items:center;padding:6rem 0 4rem}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#15803d;font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#0f172a;line-height:1.12;margin-bottom:1rem}
+.hero h1 .blue{color:#2563eb}
+.hero h1 .green{color:#16a34a}
+.hero p{font-size:18px;color:#64748b;line-height:1.7;margin-bottom:2rem;max-width:480px}
+.hero-stats{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+.hero-stat-n{font-size:26px;font-weight:800;color:#2563eb}
+.hero-stat-l{font-size:12px;color:#94a3b8;margin-top:2px}
+
+/* Hero illustration */
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.rupee-circle{width:300px;height:300px;background:linear-gradient(135deg,#bfdbfe,#bbf7d0);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;margin:0 auto}
+.rupee-inner{width:140px;height:140px;background:linear-gradient(135deg,#2563eb,#16a34a);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.rupee-inner svg{width:72px;height:72px;color:#fff;fill:none;stroke:#fff;stroke-width:2}
+.float-coin{position:absolute;top:-10px;right:-10px;width:60px;height:60px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bounce 2s infinite;box-shadow:0 4px 12px rgba(34,197,94,0.4)}
+.float-coin svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2}
+.float-card{position:absolute;bottom:-10px;right:-20px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.float-card-inner{display:flex;align-items:center;gap:10px}
+.float-card-icon{width:36px;height:36px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.float-card-icon svg{width:18px;height:18px;stroke:#16a34a;fill:none;stroke-width:2.5}
+.float-card-title{font-weight:700;font-size:13px;color:#0f172a}
+.float-card-sub{font-size:11px;color:#64748b}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* Trust bar */
+.trust-bar{background:linear-gradient(135deg,#2563eb,#1d4ed8);padding:1rem 0}
+.trust-items{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;color:#bfdbfe;font-size:13px;font-weight:500}
+.trust-item svg{width:16px;height:16px;stroke:#93c5fd;fill:none;stroke-width:2.5}
+
+/* Section common */
+section{padding:5rem 0}
+.section-label{font-size:12px;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.section-title{font-size:clamp(1.6rem,4vw,2.25rem);font-weight:800;color:#0f172a;margin-bottom:12px}
+.section-sub{font-size:16px;color:#64748b;max-width:520px;margin:0 auto;line-height:1.7}
+.text-center{text-align:center}
+.section-head{margin-bottom:3rem}
+
+/* Feature cards */
+.features{background:#f8fafc}
+.cards-grid{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center}.cards-grid .feature-card{flex:1 1 200px;max-width:calc(33.333% - 1rem)}
+.feature-card{background:#fff;border:0.5px solid #e2e8f0;border-radius:16px;padding:1.75rem;text-align:center;transition:box-shadow 0.2s}
+.feature-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+.feature-icon{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.feature-icon.blue{background:#eff6ff}
+.feature-icon.green{background:#f0fdf4}
+.feature-icon.purple{background:#faf5ff}
+.feature-icon svg{width:28px;height:28px;fill:none;stroke-width:2}
+.feature-icon.blue svg{stroke:#2563eb}
+.feature-icon.green svg{stroke:#16a34a}
+.feature-icon.purple svg{stroke:#9333ea}
+.feature-card h3{font-size:16px;font-weight:700;color:#0f172a;margin-bottom:8px}
+.feature-card p{font-size:13px;color:#64748b;line-height:1.6}
+
+/* Steps */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem}
+.step{text-align:center}
+.step-num{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-size:22px;font-weight:800;color:#fff}
+.step-num.s1{background:#2563eb}
+.step-num.s2{background:#16a34a}
+.step-num.s3{background:#9333ea}
+.step-num.s4{background:#f97316}
+.step-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem}
+.step-icon.s1{background:#eff6ff}
+.step-icon.s2{background:#f0fdf4}
+.step-icon.s3{background:#faf5ff}
+.step-icon.s4{background:#fff7ed}
+.step-icon svg{width:26px;height:26px;fill:none;stroke-width:2}
+.step-icon.s1 svg{stroke:#2563eb}
+.step-icon.s2 svg{stroke:#16a34a}
+.step-icon.s3 svg{stroke:#9333ea}
+.step-icon.s4 svg{stroke:#f97316}
+.step h3{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:6px}
+.step p{font-size:13px;color:#64748b;line-height:1.6}
+
+/* Testimonials */
+.testimonials{background:linear-gradient(135deg,#eff6ff,#f0fdf4)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.testi-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.stars{display:flex;gap:3px;margin-bottom:1rem}
+.stars svg{width:18px;height:18px;fill:#fbbf24;stroke:#fbbf24}
+.testi-card p{font-size:14px;color:#475569;line-height:1.7;font-style:italic;margin-bottom:1.25rem}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;background:#e2e8f0;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#64748b}
+.testi-name{font-weight:700;font-size:14px;color:#0f172a}
+.testi-role{font-size:12px;color:#94a3b8}
+
+/* Eligibility */
+.elig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:800px;margin:0 auto}
+.elig-card{border-radius:16px;padding:2rem;border:2px solid}
+.elig-card.blue{border-color:#bfdbfe}
+.elig-card.green{border-color:#bbf7d0}
+.elig-card h3{font-size:18px;font-weight:700;color:#0f172a;margin-bottom:1.25rem}
+.elig-item{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.elig-item svg{width:20px;height:20px;stroke:#16a34a;fill:none;stroke-width:2.5;flex-shrink:0}
+.elig-item span{font-size:14px;color:#374151}
+
+/* FAQ */
+.faq-section{background:#f8fafc}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:0.5px solid #e2e8f0}
+.faq-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;font-size:15px;font-weight:600;color:#0f172a}
+.faq-btn svg{width:18px;height:18px;stroke:#94a3b8;fill:none;stroke-width:2.5;transition:transform 0.2s;flex-shrink:0}
+.faq-btn.open svg{stroke:#2563eb;transform:rotate(180deg)}
+.faq-answer{font-size:14px;color:#64748b;line-height:1.7;padding-bottom:1rem;display:none}
+.faq-answer.open{display:block}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#2563eb,#16a34a);padding:5rem 0;text-align:center}
+.cta-section h2{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;color:#fff;margin-bottom:1rem}
+.cta-section p{font-size:16px;color:#bfdbfe;margin-bottom:2rem}
+.cta-note{font-size:13px;color:#93c5fd;margin-top:1rem}
+
+/* Footer */
+footer{background:#0f172a;color:#94a3b8;padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-bottom:2rem}
+.footer-brand{font-size:22px;font-weight:800;background:linear-gradient(135deg,#60a5fa,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.footer-desc{font-size:13px;color:#64748b;line-height:1.7}
+.footer-head{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:12px}
+.footer-link{display:block;font-size:13px;color:#64748b;text-decoration:none;padding:3px 0;background:none;border:none;cursor:pointer;text-align:left;transition:color 0.2s}
+.footer-link:hover{color:#f1f5f9}
+.footer-contact{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;color:#64748b}
+.footer-contact svg{width:15px;height:15px;stroke:#64748b;fill:none;stroke-width:2;flex-shrink:0}
+.footer-bottom{border-top:0.5px solid #1e293b;padding-top:1.5rem;text-align:center}
+.footer-bottom p{font-size:12px;color:#475569;line-height:1.7}
+
+/* Back to top */
+#back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:#2563eb;color:#fff;border:none;border-radius:50%;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,99,235,0.4);z-index:200;transition:background 0.2s}
+#back-top:hover{background:#1d4ed8}
+#back-top svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.5}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#94a3b8;transition:background 0.2s}
+.modal-close:hover{background:#f1f5f9}
+.modal-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.5}
+.modal-title{font-size:clamp(18px,4vw,24px);font-weight:800;text-align:center;background:linear-gradient(135deg,#2563eb,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.modal-sub{font-size:14px;color:#64748b;text-align:center;margin-bottom:1.5rem}
+.modal-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.modal-badge{display:flex;align-items:center;gap:6px;font-size:13px;color:#475569}
+.modal-badge svg{width:16px;height:16px;stroke:#16a34a;fill:none;stroke-width:2.5}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:13px;font-weight:600;color:#374151}
+.form-group input,.form-group select{padding:10px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:14px;color:#0f172a;outline:none;transition:border-color 0.2s;background:#fff;width:100%}
+.form-group input:focus,.form-group select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
+.phone-wrap{display:flex}
+.phone-prefix{display:flex;align-items:center;padding:10px 12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-right:none;border-radius:10px 0 0 10px;font-size:14px;color:#64748b}
+.phone-wrap input{border-radius:0 10px 10px 0}
+.radio-group{display:flex;gap:1.25rem;padding-top:6px;flex-wrap:wrap}
+.radio-label{display:flex;align-items:center;gap:6px;font-size:14px;color:#374151;cursor:pointer}
+.radio-label input{accent-color:#2563eb;width:16px;height:16px}
+.form-actions{display:flex;gap:0.75rem;justify-content:flex-end;margin-top:1.5rem;padding-top:1rem;border-top:0.5px solid #f1f5f9;flex-wrap:wrap}
+.form-actions .btn-primary{padding:11px 28px;font-size:15px}
+
+/* Success modal */
+.success-icon{width:72px;height:72px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.success-icon svg{width:36px;height:36px;stroke:#16a34a;fill:none;stroke-width:2.5}
+.success-box{background:#eff6ff;border-radius:12px;padding:12px 16px;font-size:13px;color:#1d4ed8;margin:1rem 0 1.5rem}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  nav,.btn-primary.desktop{display:none}
+  .hamburger{display:block}
+  .form-grid{grid-template-columns:1fr}
+  .form-group.full{grid-column:1}
+  .trust-items{gap:1rem}
+  .hero{padding:5rem 0 3rem}
+}
+@media(max-width:480px){
+  .modal{padding:1.5rem}
+  .form-actions{flex-direction:column}
+  .form-actions button{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="#home" class="logo" onclick="scrollTo('home');return false">Vyaaj</a>
+    <nav id="desktop-nav">
+      <button onclick="scrollTo('home')" class="active" id="nav-home">Home</button>
+      <button onclick="scrollTo('features')" id="nav-features">Why Choose Us</button>
+      <button onclick="scrollTo('how-it-works')" id="nav-how">How It Works</button>
+      <button onclick="scrollTo('testimonials')" id="nav-testi">Reviews</button>
+    </nav>
+    <button class="btn-primary desktop" onclick="openModal('borrower')">Apply Now</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <button onclick="scrollTo('home');closeMenu()">Home</button>
+    <button onclick="scrollTo('features');closeMenu()">Why Choose Us</button>
+    <button onclick="scrollTo('how-it-works');closeMenu()">How It Works</button>
+    <button onclick="scrollTo('testimonials');closeMenu()">Reviews</button>
+    <button class="btn-primary" onclick="openModal('borrower');closeMenu()">Apply Now</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">✨ Trusted by 10,000+ customers</div>
+        <h1>Get Instant Loans in <span class="blue">Minutes</span> – <span class="green">Fast, Easy & Reliable!</span></h1>
+        <p>No paperwork, no hassle. Get the funds you need now with our streamlined digital process.</p>
+        <button class="btn-primary" style="font-size:16px;padding:14px 32px;border-radius:12px;box-shadow:0 4px 16px rgba(37,99,235,0.3)" onclick="openModal('borrower')">
+          Apply Now
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="hero-stats">
+          <div><div class="hero-stat-n">1 Min</div><div class="hero-stat-l">Application</div></div>
+          <div><div class="hero-stat-n" style="color:#16a34a">24/7</div><div class="hero-stat-l">Approval</div></div>
+          <div><div class="hero-stat-n" style="color:#9333ea">5 Min</div><div class="hero-stat-l">Funds Transfer</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="rupee-circle">
+          <div class="rupee-inner">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path stroke="currentColor" d="M6 3h12M6 8h12M6 8c0 5 3 9 6 9s6-4 6-9M12 17l-4 4"/></svg>
+          </div>
+          <div class="float-coin">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="float-card">
+            <div class="float-card-inner">
+              <div class="float-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2.5"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2.5"/></svg>
+              </div>
+              <div>
+                <div class="float-card-title">Loan Approved!</div>
+                <div class="float-card-sub">₹50,000 transferred</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust bar -->
+<div class="trust-bar">
+  <div class="trust-items">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> No CIBIL score impact</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Results in 2 minutes</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Zero hidden charges</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg> 30+ RBI-registered lenders</div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Why Choose Our Instant Loans?</h2>
+      <p class="section-sub">Experience the fastest, most reliable lending service with unmatched benefits</p>
+    </div>
+    <div class="cards-grid">
+      <div class="feature-card">
+        <div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor"/></svg></div>
+        <h3>Low Interest Rates</h3>
+        <p>Starting from just 8.5% per annum with transparent pricing and no hidden charges</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon green"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor"/><line x1="1" y1="10" x2="23" y2="10" stroke="currentColor"/></svg></div>
+        <h3>Flexible EMIs</h3>
+        <p>Choose repayment tenure from 3 to 60 months that fits your budget perfectly</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor"/><polyline points="12 6 12 12 16 14" stroke="currentColor"/></svg></div>
+        <h3>Instant Approval</h3>
+        <p>Get approved within minutes with our AI-powered assessment system</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon blue"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor"/><line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor"/></svg></div>
+        <h3>100% Digital</h3>
+        <p>Apply from anywhere, anytime. No branch visits or physical documents required</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon green"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor"/><circle cx="9" cy="7" r="4" stroke="currentColor"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor"/></svg></div>
+        <h3>30+ Lenders</h3>
+        <p>Access our wide network of verified banks, NBFCs and fintech partners</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon purple"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor"/></svg></div>
+        <h3>Smart Matching</h3>
+        <p>AI-powered algorithm matches you with the best lender for your profile</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how-it-works" style="background:#fff">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Simple steps to get your loan approved</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num s1">1</div>
+        <div class="step-icon s1"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor"/><line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor"/></svg></div>
+        <h3>Apply Online</h3>
+        <p>Fill out our simple 2-minute application form with basic details</p>
+      </div>
+      <div class="step">
+        <div class="step-num s2">2</div>
+        <div class="step-icon s2"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor"/></svg></div>
+        <h3>Instant Verification</h3>
+        <p>Our AI system verifies your information and creditworthiness instantly</p>
+      </div>
+      <div class="step">
+        <div class="step-num s3">3</div>
+        <div class="step-icon s3"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor"/></svg></div>
+        <h3>Get Approval</h3>
+        <p>Receive instant approval notification with loan terms and conditions</p>
+      </div>
+      <div class="step">
+        <div class="step-num s4">4</div>
+        <div class="step-icon s4"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" stroke="currentColor"/><line x1="1" y1="10" x2="23" y2="10" stroke="currentColor"/></svg></div>
+        <h3>Receive Funds</h3>
+        <p>Money is transferred directly to your bank account within 5 minutes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head text-center">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-sub">Join thousands of satisfied customers</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p>"Got a personal loan for my sister's wedding within minutes! The entire process was seamless and hassle-free."</p>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Arun Patel</div><div class="testi-role">IT Professional</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p>"Best personal loan service ever! Quick approval and minimal documentation. Got funds for my business expansion quickly."</p>
+        <div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Meera Reddy</div><div class="testi-role">Business Owner</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p>"The personal loan EMI options are very flexible. Helped me manage my home renovation expenses perfectly!"</p>
+        <div class="testi-author"><div class="testi-avatar">V</div><div><div class="testi-name">Vikram Malhotra</div><div class="testi-role">Software Engineer</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Eligibility -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="section-head text-center">
+      <h2 class="section-title">Eligibility Criteria</h2>
+      <p class="section-sub">Simple requirements to get started</p>
+    </div>
+    <div class="elig-grid">
+      <div class="elig-card blue">
+        <h3>Basic Requirements</h3>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Age: 21–65 years</span></div>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Valid PAN Card & Aadhaar</span></div>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Active bank account with net banking</span></div>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Indian resident</span></div>
+      </div>
+      <div class="elig-card green">
+        <h3>Other Requirements</h3>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>All credit score types accepted</span></div>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>For both salaried & self-employed</span></div>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Valid Indian mobile number</span></div>
+        <div class="elig-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Minimum monthly income: ₹10,000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head text-center">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Get answers to common questions</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(0)">How quickly can I get my loan? <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer" id="faq-0">Once approved, funds are typically transferred to your bank account within 5 minutes. The approval process itself takes just 2–3 minutes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(1)">What documents are needed? <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer" id="faq-1">You'll need your PAN card, Aadhaar card, latest salary slips, bank statements for the last 3 months, and a valid address proof. All documents can be uploaded digitally.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(2)">What is the maximum loan amount? <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer" id="faq-2">You can borrow up to ₹10,00,000 depending on your income, CIBIL score, and employment status. For salaried individuals, loans up to 3 times monthly salary can be approved.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(3)">Are there any processing fees? <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer" id="faq-3">A processing fee of 1–2% of the loan amount is applicable. GST will be charged additionally. All charges are clearly mentioned in the loan agreement.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(4)">What are the interest rates? <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer" id="faq-4">Interest rates start from 8.5% per annum and vary based on your CIBIL score, income, and loan tenure. We offer some of the most competitive rates in the market.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(5)">Is foreclosure allowed? <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer" id="faq-5">Yes, you can foreclose your loan after 6 EMIs with a nominal foreclosure charge of 2–4% on the outstanding principal amount, as per RBI guidelines.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <h2>Ready to Get Your Instant Loan?</h2>
+    <p>Join thousands of satisfied customers who trust us for their financial needs</p>
+    <button class="btn-white" onclick="openModal('borrower')">
+      Apply Now — It's Free!
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <p class="cta-note">No impact on credit score · 100% secure · 2-minute application</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Vyaaj</div>
+        <p class="footer-desc">Fast, reliable, and secure instant loans for all your financial needs.</p>
+      </div>
+      <div>
+        <div class="footer-head">Quick Links</div>
+        <button class="footer-link" onclick="scrollTo('home')">Home</button>
+        <button class="footer-link" onclick="scrollTo('features')">Why Choose Us</button>
+        <button class="footer-link" onclick="scrollTo('how-it-works')">How It Works</button>
+        <button class="footer-link" onclick="scrollTo('testimonials')">Reviews</button>
+      </div>
+      <div>
+        <div class="footer-head">Legal</div>
+        <a class="footer-link" href="privacy-policy.html">Privacy Policy</a>
+        <a class="footer-link" href="terms.html">Terms & Conditions</a>
+      </div>
+      <div>
+        <div class="footer-head">Contact Us</div>
+        <div class="footer-contact"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>support@vyaaj.in</div>
+        <div class="footer-contact"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>India</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Vyaaj.in · Powered by Leverse Labs Private Limited</p>
+      <p style="margin-top:6px">Vyaaj is a loan marketplace and does not lend directly. All loans subject to lender approval. All partner lenders are RBI-registered.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Borrower Modal -->
+<div class="modal-overlay" id="modal-borrower">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('borrower')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="modal-title">Quick Loan Application</div>
+    <div class="modal-sub"><strong style="color:#0f172a">Get up to ₹5,00,000 Instantly!</strong></div>
+    <div class="modal-badges">
+      <span class="modal-badge"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>2-Minute Application</span>
+      <span class="modal-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5-Minute Disbursement</span>
+      <span class="modal-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>100% Secure</span>
+    </div>
+    <form id="borrower-form" onsubmit="submitBorrower(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input name="name" placeholder="Enter your full name" required/>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <div class="phone-wrap">
+            <div class="phone-prefix">+91</div>
+            <input name="mobile" type="tel" pattern="[0-9]{10}" placeholder="10 digit number" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input name="email" type="email" placeholder="Enter your email" required/>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input name="dob" type="date" required id="dob-input"/>
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input name="city" placeholder="Enter your city" required/>
+        </div>
+        <div class="form-group">
+          <label>PIN Code</label>
+          <input name="pincode" placeholder="6 digit PIN code" pattern="[0-9]{6}" required/>
+        </div>
+        <div class="form-group full">
+          <label>Address</label>
+          <input name="address" placeholder="Enter your address" required/>
+        </div>
+        <div class="form-group">
+          <label>Monthly Income (₹)</label>
+          <input name="salary" type="number" min="10000" max="500000" placeholder="e.g. 35000" required/>
+        </div>
+        <div class="form-group">
+          <label>Employment Type</label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="employment" value="salaried" checked/> Salaried</label>
+            <label class="radio-label"><input type="radio" name="employment" value="self-employed"/> Self Employed</label>
+            <label class="radio-label"><input type="radio" name="employment" value="other"/> Other</label>
+          </div>
+        </div>
+        <!-- Web3Forms hidden fields -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY"/>
+        <input type="hidden" name="subject" value="New borrower application — Vyaaj"/>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-outline" onclick="closeModal('borrower')">Cancel</button>
+        <button type="submit" class="btn-primary" id="borrower-submit-btn">Get Instant Loan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="modal-success">
+  <div class="modal" style="max-width:460px;text-align:center">
+    <div class="success-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <h2 style="font-size:24px;font-weight:800;color:#0f172a;margin-bottom:8px">Application Received!</h2>
+    <p style="font-size:15px;color:#475569;margin-bottom:0">Thank you for applying with Vyaaj. Your loan application is being evaluated.</p>
+    <div class="success-box">Our partner lenders will contact you shortly.</div>
+    <button class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:12px" onclick="closeModal('success')">Got it, thanks!</button>
+  </div>
+</div>
+
+<script>
+// Scroll progress + active nav + back to top
+window.addEventListener('scroll', function() {
+  var total = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progress-bar').style.width = (window.scrollY / total * 100) + '%';
+  document.getElementById('back-top').style.display = window.scrollY > 500 ? 'flex' : 'none';
+  var sections = ['home','features','how-it-works','testimonials','cta'];
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    var nav = document.getElementById('nav-' + (id === 'how-it-works' ? 'how' : id === 'testimonials' ? 'testi' : id));
+    if (el && nav) {
+      var r = el.getBoundingClientRect();
+      if (r.top <= 100 && r.bottom >= 100) nav.classList.add('active');
+      else nav.classList.remove('active');
+    }
+  });
+}, {passive:true});
+
+// Set max DOB
+document.getElementById('dob-input').max = new Date().toISOString().split('T')[0];
+
+function scrollTo(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth'});
+}
+
+function toggleMenu() {
+  var nav = document.getElementById('mobile-nav');
+  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+}
+function closeMenu() {
+  document.getElementById('mobile-nav').style.display = 'none';
+}
+
+function openModal(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    if (e.target === el) {
+      el.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+// FAQ
+function toggleFaq(i) {
+  var answer = document.getElementById('faq-' + i);
+  var btn = answer.previousElementSibling;
+  var isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
+  document.querySelectorAll('.faq-btn').forEach(function(b) { b.classList.remove('open'); });
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
+// Form submit via Web3Forms
+async function submitBorrower(e) {
+  e.preventDefault();
+  var btn = document.getElementById('borrower-submit-btn');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+  var form = document.getElementById('borrower-form');
+  var data = Object.fromEntries(new FormData(form));
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(data)
+    });
+    var result = await res.json();
+    if (result.success) {
+      closeModal('borrower');
+      openModal('success');
+      form.reset();
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch(err) {
+    alert('Something went wrong. Please try again.');
+  }
+  btn.textContent = 'Get Instant Loan';
+  btn.disabled = false;
+}
+</script>
+</body>
 </html>
