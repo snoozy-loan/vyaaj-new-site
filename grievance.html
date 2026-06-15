@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grievance Redressal — How to raise a concern | Vyaaj</title>
+<meta name="description" content="How to raise a complaint with Vyaaj, our Grievance Redressal Officer, response timelines, and how to escalate to the RBI if you're not satisfied.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;
+    --ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;
+    --shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}
+  .wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}
+  .btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}
+  .nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* legal layout */
+  .legal{padding:52px 0 90px}
+  .lhead{max-width:800px;margin:0 auto}
+  .lhead .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .lhead .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .lhead h1{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(30px,4vw,42px);line-height:1.08;letter-spacing:-.025em;margin:0 0 10px}
+  .lmeta{color:var(--slate);font-size:14px;margin:0 0 26px}
+  .notice{max-width:800px;margin:0 auto 36px;background:#FFF8E8;border:1px solid #F0E2B6;border-radius:14px;padding:15px 18px;font-size:13.5px;line-height:1.6;color:#7A5B12;display:flex;gap:12px}
+  .notice svg{flex:none;width:20px;height:20px;color:#C99A1E;margin-top:1px}
+  .prose{max-width:800px;margin:0 auto}
+  .prose h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:21px;letter-spacing:-.01em;margin:40px 0 12px;color:var(--ink);scroll-margin-top:84px}
+  .prose h2:first-of-type{margin-top:0}
+  .prose h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:16.5px;margin:26px 0 8px;color:var(--ink)}
+  .prose p{margin:0 0 14px;color:var(--slate);font-size:15.5px}
+  .prose ul{margin:0 0 16px;padding-left:0;list-style:none}
+  .prose li{position:relative;padding:5px 0 5px 24px;color:var(--slate);font-size:15.5px}
+  .prose li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  .prose b{color:var(--ink);font-weight:600}
+  .prose a{color:var(--teal);font-weight:600}
+  .prose a:hover{text-decoration:underline}
+  .placeholder{color:var(--slate);font-style:italic}
+
+  /* grievance officer card */
+  .gocard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 24px;margin:14px 0 18px;box-shadow:var(--shadow-sm)}
+  .gocard .grow{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid var(--mist);font-size:15px}
+  .gocard .grow:last-child{border-bottom:0}
+  .gocard .grow .k{color:var(--slate)}
+  .gocard .grow .v{color:var(--ink);font-weight:600;text-align:right}
+  .gocard .grow .v a{color:var(--teal)}
+
+  /* level pills */
+  .lvl{display:inline-flex;align-items:center;gap:8px;background:var(--mint-soft);color:var(--teal);font-family:"Plus Jakarta Sans";font-weight:700;font-size:12.5px;letter-spacing:.02em;padding:5px 12px;border-radius:999px;margin:0 0 4px}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px;margin-top:10px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120">
+    <polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home">
+      <svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span>
+    </a>
+    <div class="links">
+      <a href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="about.html">About</a>
+      <a href="partners.html">For lenders</a>
+    </div>
+    <div class="cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn--primary" href="contact.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<section class="legal">
+  <div class="wrap">
+    <div class="lhead">
+      <div class="kicker">Grievance redressal</div>
+      <h1>Raising a concern with Vyaaj</h1>
+      <p class="lmeta">Last updated: 9 June 2025 · Applies to Vyaaj, operated by Trumflux Private Limited</p>
+    </div>
+
+    <div class="prose">
+      <p>At Vyaaj, we want every interaction to be fair, clear and respectful. If something hasn't met that standard, please tell us — we treat every complaint seriously and aim to resolve it quickly. This page explains how to raise a concern, what to expect, and how to escalate if you're not satisfied.</p>
+
+      <h2>What Vyaaj can and can't resolve</h2>
+      <p>Vyaaj is a <b>loan marketplace</b>, not a lender. We help you compare and connect with banks and RBI-registered NBFCs. That means:</p>
+      <ul>
+        <li>For issues with <b>our platform</b> — comparisons, your Vyaaj account, how your details were handled, or our conduct — we are responsible and will resolve it directly.</li>
+        <li>For issues with a <b>sanctioned loan</b> — disbursal, EMIs, charges, statements or recovery — the lender is responsible. We'll help you reach the right team and follow up, but the lender's own grievance process applies as well.</li>
+      </ul>
+
+      <h2>How to raise a complaint</h2>
+
+      <h3><span class="lvl">Level 1</span> Reach our support team</h3>
+      <p>Start by writing to us with your name, registered contact details and a clear description of the issue (with any reference numbers or screenshots).</p>
+      <ul>
+        <li>Email: <a href="mailto:support@vyaaj.in">support@vyaaj.in</a></li>
+        <li>Or use the <a href="contact.html">contact form</a> and choose "Complaint / grievance"</li>
+      </ul>
+      <p>We aim to <b>acknowledge your complaint within 48 hours</b> and resolve most issues within <b>7 working days</b>.</p>
+
+      <h3><span class="lvl">Level 2</span> Escalate to our Grievance Redressal Officer</h3>
+      <p>If your complaint isn't resolved at Level 1, or you're not satisfied with the outcome, you can escalate to our Grievance Redressal Officer (GRO):</p>
+      <div class="gocard">
+        <div class="grow"><span class="k">Officer</span><span class="v">Mr. Parvez Dosani</span></div>
+        <div class="grow"><span class="k">Designation</span><span class="v">Grievance Redressal Officer</span></div>
+        <div class="grow"><span class="k">Email</span><span class="v"><a href="mailto:grievance@vyaaj.in">grievance@vyaaj.in</a></span></div>
+        <div class="grow"><span class="k">Phone</span><span class="v"><a href="tel:+918708298879">+91 87082 98879</a></span></div>
+        <div class="grow"><span class="k">Address</span><span class="v">Trumflux Private Limited,<br>626/E, HSR Jupiter, 1st Main Road,<br>Sector 6, HSR Layout, Bengaluru,<br>Karnataka 560102</span></div>
+        <div class="grow"><span class="k">Hours</span><span class="v">Mon–Sat, 10:00 AM – 6:00 PM IST</span></div>
+      </div>
+      <p>The GRO will look into your complaint independently and respond with a resolution. We aim to close escalated complaints within <b>30 days</b> of receipt.</p>
+
+      <h3><span class="lvl">Level 3</span> Escalate to the RBI</h3>
+      <p>If your complaint relates to a loan from an RBI-regulated lender and remains unresolved for <b>30 days</b>, or you're dissatisfied with the response, you may approach the Reserve Bank of India under the Reserve Bank – Integrated Ombudsman Scheme:</p>
+      <ul>
+        <li>RBI Complaint Management System (CMS): <a href="https://cms.rbi.org.in" target="_blank" rel="noopener">cms.rbi.org.in</a></li>
+        <li>RBI contact centre / RB-IOS helpline <span class="placeholder">[confirm current number]</span></li>
+      </ul>
+      <p>For loan-specific matters, you may also raise the complaint with the lender's own Grievance Redressal Officer or Nodal Officer, whose details are provided in your loan documents and on the lender's website.</p>
+
+      <h2>Information to include</h2>
+      <p>To help us resolve things faster, please share:</p>
+      <ul>
+        <li>Your full name and the mobile number / email registered with us</li>
+        <li>A clear description of the issue and when it happened</li>
+        <li>Any reference, application or loan account numbers</li>
+        <li>Supporting documents or screenshots, where relevant</li>
+        <li>The outcome you're looking for</li>
+      </ul>
+
+      <h2>Our commitment</h2>
+      <p>We will treat your complaint confidentially, keep you informed of progress, and never penalise you for raising a genuine concern. If we get something wrong, we'll own it and put it right.</p>
+
+      <p style="margin-top:26px"><a href="contact.html">← Back to Contact &amp; help</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4>
+        <a href="personal-loan.html">Personal Loan</a>
+        <a href="home-loan.html">Home Loan</a>
+        <a href="business-loan.html">Business Loan</a>
+        <a href="loan-against-property.html">Loan Against Property</a>
+        <a href="balance-transfer.html">Balance Transfer</a>
+      </div>
+      <div class="fcol"><h4>Company</h4>
+        <a href="about.html">About Vyaaj</a>
+        <a href="how-we-make-money.html">How we make money</a>
+        <a href="partners.html">Partner lenders</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol"><h4>Legal &amp; help</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="grievance.html">Grievance redressal</a>
+        <a href="contact.html">Help centre</a>
+      </div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row">
+        <span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

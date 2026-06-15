@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner with Vyaaj — List your loan products | Vyaaj for Lenders</title>
+<meta name="description" content="Banks, NBFCs and HFCs partner with Vyaaj to reach pre-qualified borrowers on a transparent, performance-priced marketplace. Plug in, list your products, and meet borrowers who are ready to commit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;
+    --ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;
+    --shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}
+  .wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}
+  .btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .btn--mint{background:var(--mint);color:var(--teal-deep)}
+  .btn--mint:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(52,211,153,.6)}
+  .btn--ghost{background:transparent;color:var(--teal);padding:14px 18px}
+  .btn--white{background:#fff;color:var(--teal)}
+  .btn--white:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}
+  .nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  .sec{padding:78px 0}
+  .sec--tight{padding:54px 0}
+  .sec--teal{background:linear-gradient(160deg,var(--teal),var(--teal-deep));color:#fff}
+  .head{max-width:660px;margin:0 0 42px}
+  .head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .head.center .kicker{justify-content:center}
+  .head .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .head .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .sec--teal .head .kicker{color:var(--mint)}
+  .head h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:clamp(26px,3.4vw,34px);line-height:1.12;letter-spacing:-.02em;margin:0 0 12px}
+  .head p{margin:0;font-size:16.5px;color:var(--slate)}
+  .sec--teal .head p{color:rgba(255,255,255,.8)}
+
+  /* hero */
+  .phero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:54px 28px 64px}
+  .phero .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--teal);background:var(--mint-soft);border:1px solid #C3EAD9;padding:7px 14px;border-radius:999px;margin:0 0 20px}
+  .phero .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  .phero h1{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(34px,4.6vw,50px);margin:0 0 18px}
+  .phero h1 em{font-style:normal;color:var(--teal)}
+  .phero .sub{font-size:18px;color:var(--slate);max-width:500px;margin:0 0 28px}
+  .phero .actions{display:flex;gap:13px;flex-wrap:wrap}
+  .snap{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:10px}
+  .snap .sr{display:flex;align-items:flex-start;gap:14px;padding:18px;border-bottom:1px solid var(--mist)}
+  .snap .sr:last-child{border-bottom:0}
+  .snap .si{flex:none;width:40px;height:40px;border-radius:11px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center}
+  .snap .si svg{width:20px;height:20px}
+  .snap .st{font-family:"Plus Jakarta Sans";font-weight:700;font-size:16px;color:var(--ink)}
+  .snap .sd{font-size:13.5px;color:var(--slate);margin-top:2px}
+
+  /* feature cards */
+  .fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px}
+  .fcard .ic{width:44px;height:44px;border-radius:12px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .fcard .ic svg{width:22px;height:22px}
+  .fcard h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:18px;margin:0 0 8px}
+  .fcard p{margin:0;color:var(--slate);font-size:14.5px}
+  @media(max-width:820px){.fcards{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.fcards{grid-template-columns:1fr}}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{position:relative;padding:26px 22px;background:#fff;border:1px solid var(--line);border-radius:18px}
+  .sec--teal .step{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+  .step .num{width:40px;height:40px;border-radius:11px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans";font-weight:800;font-size:17px;margin-bottom:15px}
+  .step h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:17px;margin:0 0 7px}
+  .sec--teal .step h3{color:#fff}
+  .step p{margin:0;color:var(--slate);font-size:14px}
+  .sec--teal .step p{color:rgba(255,255,255,.75)}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+  /* partner types */
+  .ptypes{display:flex;flex-wrap:wrap;gap:12px}
+  .ptype{background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 20px;font-family:"Plus Jakarta Sans";font-weight:600;font-size:14.5px;color:var(--ink);display:inline-flex;align-items:center;gap:9px}
+  .ptype .dot{width:8px;height:8px;border-radius:50%;background:var(--mint)}
+
+  /* faq */
+  .faq{max-width:780px}
+  .faq details{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:12px;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-family:"Plus Jakarta Sans";font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .pm{flex:none;width:22px;height:22px;color:var(--teal);transition:transform .2s}
+  .faq details[open] summary .pm{transform:rotate(45deg)}
+  .faq .ans{padding:0 22px 20px;color:var(--slate);font-size:15px}
+
+  .final{position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 80% 20%,rgba(52,211,153,.18),transparent 60%);pointer-events:none}
+  .final .wrap{position:relative;text-align:center;padding:74px 28px}
+  .final .mark{width:56px;height:56px;margin:0 auto 22px;--logo:#fff;--node:var(--mint)}
+  .final h2{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+  .final p{font-size:17px;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 28px}
+  .final .actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+
+  @media(max-width:900px){.phero .wrap{grid-template-columns:1fr;gap:34px;padding:40px 28px 52px}}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120">
+    <polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home">
+      <svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span>
+    </a>
+    <div class="links">
+      <a href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="about.html">About</a>
+      <a class="active" href="partners.html">For lenders</a>
+    </div>
+    <div class="cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn--primary" href="contact.html">Become a partner</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="phero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Vyaaj for lenders</span>
+      <h1>Reach borrowers who are <em>ready to commit</em>.</h1>
+      <p class="sub">List your loan products on Vyaaj and meet borrowers who have already compared the market and chosen the offer that fits. Performance-priced, plug-and-play, and built to be fair to every lender.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="contact.html">Become a partner
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#how">How partnership works</a>
+      </div>
+    </div>
+    <div class="snap">
+      <div class="sr"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><div class="st">Pre-qualified borrowers</div><div class="sd">Soft-checked and matched to your criteria before they reach you.</div></div></div>
+      <div class="sr"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><div class="st">Performance pricing</div><div class="sd">Pay a referral fee on successful disbursal — not for clicks or leads.</div></div></div>
+      <div class="sr"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span><div><div class="st">API or partner portal</div><div class="sd">Integrate in the way that suits your stack — connect or upload.</div></div></div>
+      <div class="sr"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span><div><div class="st">Fair, bias-free ranking</div><div class="sd">Offers are ranked on borrower fit, never on who pays more.</div></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY PARTNER -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker">Why partner with Vyaaj</div>
+      <h2>Qualified demand, lower acquisition cost</h2>
+      <p>Vyaaj sits between you and the borrower as an honest broker — sending you customers who are informed, eligible and ready, while keeping you in full control of credit decisions.</p>
+    </div>
+    <div class="fcards reveal">
+      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Intent-rich borrowers</h3><p>Customers reach you after actively comparing offers and choosing yours — higher conversion, fewer tyre-kickers.</p></div>
+      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg></div><h3>Lower cost of acquisition</h3><p>You pay on outcome, not impressions. Marketing spend converts into disbursed loans, not wasted clicks.</p></div>
+      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Cleaner funnel</h3><p>Soft-check pre-qualification filters out unlikely approvals upfront, so your team spends time on real opportunities.</p></div>
+      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg></div><h3>Structured applications</h3><p>Borrower details arrive complete and standardised, reducing back-and-forth and drop-offs at your end.</p></div>
+      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></div><h3>Transparent &amp; compliant</h3><p>Clear disclosures, soft enquiries and RBI-aligned practices protect your brand and the borrower alike.</p></div>
+      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg></div><h3>Your brand, your terms</h3><p>You set the rates, define eligibility and approve every loan. Vyaaj never lends — we only connect.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec--teal" id="how">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="kicker">How partnership works</div>
+      <h2>Live in four steps</h2>
+      <p>From onboarding to your first matched borrower, the path is short and the integration light.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="num">1</div><h3>Connect &amp; list</h3><p>Onboard via API or our partner portal and publish your loan products, rates and eligibility rules.</p></div>
+      <div class="step"><div class="num">2</div><h3>We match borrowers</h3><p>Eligible, soft-checked borrowers see your offer ranked purely on fit, alongside the rest of the market.</p></div>
+      <div class="step"><div class="num">3</div><h3>You approve &amp; disburse</h3><p>The borrower applies; you run your own checks, make the credit decision and disburse the loan.</p></div>
+      <div class="step"><div class="num">4</div><h3>Settle the referral fee</h3><p>A pre-agreed referral fee applies only on successful disbursal — reconciled transparently each cycle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TYPES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker">Who we work with</div>
+      <h2>Built for every kind of lender</h2>
+      <p>If you lend to retail or business borrowers in India and you're RBI-regulated, there's a place for you on Vyaaj.</p>
+    </div>
+    <div class="ptypes reveal">
+      <span class="ptype"><span class="dot"></span>Banks</span>
+      <span class="ptype"><span class="dot"></span>NBFCs</span>
+      <span class="ptype"><span class="dot"></span>Housing Finance Companies</span>
+      <span class="ptype"><span class="dot"></span>Small Finance Banks</span>
+      <span class="ptype"><span class="dot"></span>Fintech lenders</span>
+      <span class="ptype"><span class="dot"></span>Co-lending partners</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec--tight">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker">Partner questions</div>
+      <h2>The details lenders ask about</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>How does pricing work?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Vyaaj is performance-priced. You pay a pre-agreed referral fee only when a loan is successfully disbursed — there's no charge for impressions, clicks or unconverted leads. Exact commercials are agreed during onboarding.</div></details>
+      <details><summary>How do you keep ranking fair across lenders?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Offers are ranked on what matters to the borrower — rate, eligibility fit and total cost — not on how much a lender pays. Because partners are charged on a similar basis, no one can buy their way to the top. It's the core of how we stay honest.</div></details>
+      <details><summary>What integration is required?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">You can integrate via REST API for real-time rate and eligibility checks, or start lighter with our partner portal and structured file uploads. We'll work with your tech team to fit your existing stack.</div></details>
+      <details><summary>Who makes the final credit decision?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">You do, always. Vyaaj matches and refers borrowers; underwriting, approval, pricing and disbursal remain entirely with you and follow your own policies and RBI obligations.</div></details>
+      <details><summary>How is borrower data handled?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Borrower information is shared with a lender only when the borrower chooses to proceed with that lender, with their consent, and is handled in line with applicable data-protection law. We don't broadcast a borrower's details to every partner.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec--teal final">
+  <div class="wrap">
+    <svg class="mark"><use href="#vyaaj-mark"/></svg>
+    <h2>Let's get your offers in front of the right borrowers</h2>
+    <p>Tell us about your loan products and we'll walk you through onboarding, integration and commercials.</p>
+    <div class="actions">
+      <a class="btn btn--mint" href="contact.html">Talk to our partnerships team
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--white" href="how-we-make-money.html">How Vyaaj makes money</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4>
+        <a href="personal-loan.html">Personal Loan</a>
+        <a href="home-loan.html">Home Loan</a>
+        <a href="business-loan.html">Business Loan</a>
+        <a href="loan-against-property.html">Loan Against Property</a>
+        <a href="balance-transfer.html">Balance Transfer</a>
+      </div>
+      <div class="fcol"><h4>Company</h4>
+        <a href="about.html">About Vyaaj</a>
+        <a href="how-we-make-money.html">How we make money</a>
+        <a href="partners.html">Partner lenders</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol"><h4>Legal &amp; help</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="grievance.html">Grievance redressal</a>
+        <a href="contact.html">Help centre</a>
+      </div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row">
+        <span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>

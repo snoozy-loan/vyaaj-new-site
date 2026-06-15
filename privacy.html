@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — How Vyaaj handles your data | Vyaaj</title>
+<meta name="description" content="How Vyaaj collects, uses, shares and protects your personal data, how soft credit checks work, your rights under the DPDP Act 2023, and how to contact us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;
+    --ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;
+    --shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}
+  .wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}
+  .btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}
+  .nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* legal layout */
+  .legal{padding:52px 0 90px}
+  .lhead{max-width:800px;margin:0 auto}
+  .lhead .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .lhead .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .lhead h1{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(30px,4vw,42px);line-height:1.08;letter-spacing:-.025em;margin:0 0 10px}
+  .lmeta{color:var(--slate);font-size:14px;margin:0 0 26px}
+  .notice{max-width:800px;margin:0 auto 36px;background:#FFF8E8;border:1px solid #F0E2B6;border-radius:14px;padding:15px 18px;font-size:13.5px;line-height:1.6;color:#7A5B12;display:flex;gap:12px}
+  .notice svg{flex:none;width:20px;height:20px;color:#C99A1E;margin-top:1px}
+  .prose{max-width:800px;margin:0 auto}
+  .prose h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:21px;letter-spacing:-.01em;margin:40px 0 12px;color:var(--ink);scroll-margin-top:84px}
+  .prose h2:first-of-type{margin-top:0}
+  .prose h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:16.5px;margin:26px 0 8px;color:var(--ink)}
+  .prose p{margin:0 0 14px;color:var(--slate);font-size:15.5px}
+  .prose ul{margin:0 0 16px;padding-left:0;list-style:none}
+  .prose li{position:relative;padding:5px 0 5px 24px;color:var(--slate);font-size:15.5px}
+  .prose li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  .prose b{color:var(--ink);font-weight:600}
+  .prose a{color:var(--teal);font-weight:600}
+  .prose a:hover{text-decoration:underline}
+  .placeholder{color:var(--slate);font-style:italic}
+
+  /* contact card (reused from legal core) */
+  .gocard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 24px;margin:14px 0 18px;box-shadow:var(--shadow-sm)}
+  .gocard .grow{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid var(--mist);font-size:15px}
+  .gocard .grow:last-child{border-bottom:0}
+  .gocard .grow .k{color:var(--slate)}
+  .gocard .grow .v{color:var(--ink);font-weight:600;text-align:right}
+  .gocard .grow .v a{color:var(--teal)}
+
+  /* level / tag pills */
+  .lvl{display:inline-flex;align-items:center;gap:8px;background:var(--mint-soft);color:var(--teal);font-family:"Plus Jakarta Sans";font-weight:700;font-size:12.5px;letter-spacing:.02em;padding:5px 12px;border-radius:999px;margin:0 0 4px}
+
+  /* mini table of contents */
+  .toc{max-width:800px;margin:0 auto 30px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;box-shadow:var(--shadow-sm)}
+  .toc h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--slate);margin:0 0 12px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:32px}
+  .toc li{font-size:14px;margin-bottom:8px;color:var(--teal)}
+  .toc li a{color:var(--teal);font-weight:500}
+  .toc li a:hover{text-decoration:underline}
+  @media(max-width:560px){.toc ol{columns:1}}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px;margin-top:10px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120">
+    <polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home">
+      <svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span>
+    </a>
+    <div class="links">
+      <a href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="about.html">About</a>
+      <a href="partners.html">For lenders</a>
+    </div>
+    <div class="cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn--primary" href="contact.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<section class="legal">
+  <div class="wrap">
+    <div class="lhead">
+      <div class="kicker">Privacy policy</div>
+      <h1>Your data, handled with care</h1>
+      <p class="lmeta">Last updated: 9 June 2025 · Applies to Vyaaj, operated by Trumflux Private Limited</p>
+    </div>
+
+    <div class="toc">
+      <h4>On this page</h4>
+      <ol>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#use">How we use it</a></li>
+        <li><a href="#credit">Soft checks &amp; credit bureaus</a></li>
+        <li><a href="#share">When we share data</a></li>
+        <li><a href="#cookies">Cookies &amp; tracking</a></li>
+        <li><a href="#security">How we protect it</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <div class="prose">
+      <p>Vyaaj helps you compare loans and connect with lenders. To do that well, we have to handle some of your personal data — so we want to be straight with you about what we collect, why, who we share it with, and the control you have. We collect only what we need, we don't sell your data, and we never share it with a lender until you choose to apply.</p>
+
+      <h2 id="who">Who we are</h2>
+      <p>Vyaaj is a digital loan marketplace operated by <b>Trumflux Private Limited</b> ("Vyaaj", "we", "us"). For the purposes of the Digital Personal Data Protection Act, 2023, Trumflux Private Limited is the <b>Data Fiduciary</b> responsible for the personal data described here. Our registered office is at 626/E, HSR Jupiter, 1st Main Road, Sector 6, HSR Layout, Bengaluru, Karnataka 560102.</p>
+
+      <h2 id="collect">Information we collect</h2>
+      <p>We collect data in three ways: what you give us, what we gather automatically, and what we receive from trusted third parties.</p>
+
+      <h3>Information you give us</h3>
+      <ul>
+        <li><b>Identity &amp; contact details</b> — name, mobile number, email, date of birth and address.</li>
+        <li><b>Financial details</b> — income, employment type, existing obligations and the loan amount, purpose and tenure you're exploring.</li>
+        <li><b>Verification documents</b> — where a lender requires them, identity and income proofs (for example PAN, Aadhaar-linked KYC, bank statements or salary slips), shared securely for that application.</li>
+        <li><b>Anything you send us</b> — messages, support requests and feedback.</li>
+      </ul>
+
+      <h3>Information we collect automatically</h3>
+      <ul>
+        <li><b>Device &amp; usage data</b> — IP address, browser and device type, pages viewed and actions taken on Vyaaj.</li>
+        <li><b>Cookies and similar technologies</b> — see <a href="#cookies">Cookies &amp; tracking</a> below.</li>
+      </ul>
+
+      <h3>Information from third parties</h3>
+      <ul>
+        <li><b>Credit information companies</b> — with your consent, your credit score and report from RBI-licensed bureaus (for example CIBIL, Experian, Equifax or CRIF High Mark).</li>
+        <li><b>Verification &amp; KYC providers</b> — to confirm the details you provide.</li>
+        <li><b>Partner lenders</b> — application status and outcome, so we can keep you updated.</li>
+      </ul>
+
+      <h2 id="use">How we use your information</h2>
+      <p>We use your data only for clear, stated purposes:</p>
+      <ul>
+        <li>To show you indicative loan offers and estimate eligibility and EMIs.</li>
+        <li>To pass your application to the lender(s) you choose, and to follow up on it.</li>
+        <li>To run soft credit checks where you've consented (see below).</li>
+        <li>To verify your identity and prevent fraud or misuse.</li>
+        <li>To provide support and respond to your queries.</li>
+        <li>To improve and secure our platform, and to understand which products are useful.</li>
+        <li>To send service communications, and — only where you've opted in — relevant updates and offers. You can opt out of marketing at any time.</li>
+        <li>To meet our legal, regulatory and audit obligations.</li>
+      </ul>
+      <p>We rely on your <b>consent</b> for processing such as credit checks and sharing your details with lenders, and on other lawful bases (such as legitimate use and legal obligations) where the DPDP Act, 2023 permits.</p>
+
+      <h2 id="credit">Soft credit checks and credit bureaus</h2>
+      <p>When you ask Vyaaj to check your eligibility, we run a <b>soft enquiry</b> with credit bureaus where supported. A soft enquiry lets you see indicative offers and <b>does not affect your credit score</b>.</p>
+      <p>A <b>hard enquiry</b> — which can affect your score — happens only later, at the lender's end, when you formally submit an application to that lender and authorise it. We'll always make it clear before you reach that step.</p>
+      <p class="placeholder">[Confirm that your live integration genuinely uses soft pulls before making the "no impact on credit score" claim publicly.]</p>
+
+      <h2 id="share">When we share your information</h2>
+      <p>We do <b>not</b> sell your personal data. We share it only in these situations:</p>
+      <ul>
+        <li><b>With lenders you choose</b> — we share your details with a bank or NBFC only when you decide to apply to or proceed with that lender. You're never matched into an application without your action.</li>
+        <li><b>With service providers</b> — KYC, verification, cloud hosting, analytics and communication partners who process data on our behalf, under contract and only as needed.</li>
+        <li><b>For legal reasons</b> — where required by law, regulation, court order or a lawful request from an authority, or to protect our rights, users and platform.</li>
+        <li><b>In a business transfer</b> — if Vyaaj or Trumflux Private Limited is involved in a merger, acquisition or restructuring, data may transfer subject to this policy.</li>
+      </ul>
+      <p>Each lender is an independent Data Fiduciary for the data it receives, and its own privacy policy governs how it uses your information once you apply.</p>
+
+      <h2 id="cookies">Cookies and tracking</h2>
+      <p>We use cookies and similar technologies to keep you signed in, remember your preferences, measure how Vyaaj is used, and improve performance. Some are essential for the site to work; others are optional. You can manage non-essential cookies through your browser settings or our cookie controls where available.</p>
+
+      <h2 id="security">How we protect your data</h2>
+      <p>We use industry-standard safeguards — encryption in transit, access controls, and regular reviews — to protect your information. No system is ever completely secure, but we work hard to keep your data safe and to limit who can access it to those who need it. If a data breach occurs, we'll act and notify in line with applicable law.</p>
+
+      <h2 id="retention">How long we keep your data</h2>
+      <p>We keep personal data only for as long as needed for the purposes above, or as required by law and regulation (for example, KYC and lending records often have minimum retention periods). When data is no longer required, we delete or anonymise it.</p>
+
+      <h2 id="rights">Your rights</h2>
+      <p>Under the Digital Personal Data Protection Act, 2023, you have the right to:</p>
+      <ul>
+        <li><b>Access</b> a summary of the personal data we hold about you and how it's processed.</li>
+        <li><b>Correct</b> or update data that's inaccurate, incomplete or out of date.</li>
+        <li><b>Erase</b> your data where it's no longer needed and there's no legal reason to keep it.</li>
+        <li><b>Withdraw consent</b> at any time, where processing is based on consent (this won't affect anything done before you withdrew).</li>
+        <li><b>Nominate</b> another person to exercise your rights in case of death or incapacity.</li>
+        <li><b>Grievance redressal</b> — raise a concern with us first, and escalate if you're not satisfied.</li>
+      </ul>
+      <p>To exercise any of these, contact us using the details below. We may need to verify your identity first.</p>
+
+      <h2 id="children">Children</h2>
+      <p>Vyaaj is meant for users aged 18 and above and is not directed at children. We don't knowingly collect data from anyone under 18. If you believe a minor has shared data with us, please contact us and we'll remove it.</p>
+
+      <h2 id="changes">Changes to this policy</h2>
+      <p>We may update this policy from time to time as our services, technology or the law change. When we do, we'll revise the "last updated" date above and, for significant changes, give you a clearer heads-up. Please check back occasionally.</p>
+
+      <h2 id="contact">How to contact us</h2>
+      <p>For any privacy question, or to exercise your rights, reach out to us:</p>
+      <div class="gocard">
+        <div class="grow"><span class="k">Data Protection contact</span><span class="v">Mr. Parvez Dosani</span></div>
+        <div class="grow"><span class="k">Email</span><span class="v"><a href="mailto:privacy@vyaaj.in">privacy@vyaaj.in</a></span></div>
+        <div class="grow"><span class="k">Phone</span><span class="v"><a href="tel:+918708298879">+91 87082 98879</a></span></div>
+        <div class="grow"><span class="k">Entity</span><span class="v">Trumflux Private Limited</span></div>
+        <div class="grow"><span class="k">Address</span><span class="v">626/E, HSR Jupiter, 1st Main Road,<br>Sector 6, HSR Layout, Bengaluru,<br>Karnataka 560102</span></div>
+      </div>
+      <p>If your concern isn't resolved to your satisfaction, you can follow our <a href="grievance.html">grievance redressal process</a>, and ultimately approach the Data Protection Board of India as provided under the DPDP Act, 2023.</p>
+
+      <p style="margin-top:26px"><a href="contact.html">← Back to Contact &amp; help</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4>
+        <a href="personal-loan.html">Personal Loan</a>
+        <a href="home-loan.html">Home Loan</a>
+        <a href="business-loan.html">Business Loan</a>
+        <a href="loan-against-property.html">Loan Against Property</a>
+        <a href="balance-transfer.html">Balance Transfer</a>
+      </div>
+      <div class="fcol"><h4>Company</h4>
+        <a href="about.html">About Vyaaj</a>
+        <a href="how-we-make-money.html">How we make money</a>
+        <a href="partners.html">Partner lenders</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol"><h4>Legal &amp; help</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="grievance.html">Grievance redressal</a>
+        <a href="contact.html">Help centre</a>
+      </div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row">
+        <span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

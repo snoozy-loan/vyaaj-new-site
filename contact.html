@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &amp; Help — We're here to help | Vyaaj</title>
+<meta name="description" content="Get in touch with Vyaaj. Questions about comparing loans, an application, a partnership or a complaint — reach our team by email, phone or message.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;
+    --ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;
+    --shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}
+  .wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}
+  .btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .btn--mint{background:var(--mint);color:var(--teal-deep)}
+  .btn--mint:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(52,211,153,.6)}
+  .btn--white{background:#fff;color:var(--teal)}
+  .btn--white:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .btn--block{width:100%;justify-content:center}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}
+  .nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  .sec{padding:64px 0 78px}
+  .sec--tight{padding:0 0 78px}
+  .sec--teal{background:linear-gradient(160deg,var(--teal),var(--teal-deep));color:#fff}
+  .head{max-width:680px;margin:0 0 42px}
+  .head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .head.center .kicker{justify-content:center}
+  .head .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .head .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .head h1{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(32px,4.4vw,46px);line-height:1.06;letter-spacing:-.025em;margin:0 0 14px}
+  .head p{margin:0;font-size:17px;color:var(--slate)}
+
+  /* hero band */
+  .chero{padding:56px 0 8px;text-align:center}
+
+  /* contact grid */
+  .cgrid{display:grid;grid-template-columns:.95fr 1.15fr;gap:30px;align-items:start}
+  @media(max-width:880px){.cgrid{grid-template-columns:1fr;gap:24px}}
+
+  .methods{display:flex;flex-direction:column;gap:14px}
+  .method{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+  .method .mi{flex:none;width:46px;height:46px;border-radius:12px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center}
+  .method .mi svg{width:22px;height:22px}
+  .method h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:16px;margin:0 0 4px}
+  .method p{margin:0;color:var(--slate);font-size:14.5px}
+  .method a.lnk{color:var(--teal);font-weight:600}
+  .method a.lnk:hover{text-decoration:underline}
+  .method .ph{color:var(--slate)}
+
+  /* form */
+  .formcard{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:30px}
+  .formcard h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:20px;margin:0 0 4px}
+  .formcard .fsub{color:var(--slate);font-size:14.5px;margin:0 0 22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--slate);margin-bottom:7px}
+  .field input,.field select,.field textarea{width:100%;font-family:"Inter";font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
+  .field textarea{resize:vertical;min-height:120px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,211,153,.18)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:520px){.frow{grid-template-columns:1fr}}
+  .fnote{font-size:12.5px;color:var(--slate);margin-top:12px;text-align:center}
+  .fstatus{font-size:13.5px;font-weight:600;color:var(--teal);margin-top:12px;text-align:center;min-height:18px}
+
+  /* escalation callout */
+  .callout .wrap{padding:40px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .callout .ctext h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:20px;margin:0 0 6px;color:#fff}
+  .callout .ctext p{margin:0;color:rgba(255,255,255,.8);font-size:15px;max-width:560px}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120">
+    <polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home">
+      <svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span>
+    </a>
+    <div class="links">
+      <a href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="about.html">About</a>
+      <a href="partners.html">For lenders</a>
+    </div>
+    <div class="cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn--primary" href="vyaaj-landing-page.html#products">Compare offers</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="chero">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="kicker">Contact &amp; help</div>
+      <h1>We're here to help</h1>
+      <p>Whether you're comparing loans, tracking an application, exploring a partnership or raising a concern — reach us in whatever way suits you.</p>
+    </div>
+  </div>
+</header>
+
+<!-- CONTACT GRID -->
+<section class="sec">
+  <div class="wrap">
+    <div class="cgrid">
+      <!-- methods -->
+      <div class="methods reveal">
+        <div class="method">
+          <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <div><h3>Email us</h3><p>General help: <a class="lnk" href="mailto:support@vyaaj.in">support@vyaaj.in</a><br>Partnerships: <a class="lnk" href="mailto:partners@vyaaj.in">partners@vyaaj.in</a></p></div>
+        </div>
+        <div class="method">
+          <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><h3>Call us</h3><p class="ph"><a class="lnk" href="tel:+918708298879">+91 87082 98879</a><br>Mon–Sat, 10:00 AM – 7:00 PM IST</p></div>
+        </div>
+        <div class="method">
+          <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><h3>Registered office</h3><p>Trumflux Private Limited<br>626/E, HSR Jupiter, 1st Main Road,<br>Sector 6, HSR Layout,<br>Bengaluru, Karnataka 560102</p></div>
+        </div>
+        <div class="method">
+          <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><h3>Response time</h3><p>We aim to reply to every query within <b style="color:var(--ink);font-weight:600">1 working day</b>. Formal complaints follow our grievance timeline.</p></div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <div class="formcard reveal">
+        <h3>Send us a message</h3>
+        <p class="fsub">Fill this in and we'll get back to you by email. Fields marked * are required.</p>
+        <div class="field">
+          <label for="cName">Your name *</label>
+          <input id="cName" type="text" placeholder="e.g. Aarav Sharma" autocomplete="name">
+        </div>
+        <div class="frow">
+          <div class="field">
+            <label for="cEmail">Email *</label>
+            <input id="cEmail" type="email" placeholder="you@email.com" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="cPhone">Phone (optional)</label>
+            <input id="cPhone" type="tel" placeholder="+91 …" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cTopic">What's this about? *</label>
+          <select id="cTopic">
+            <option>General question</option>
+            <option>Help with a loan / application</option>
+            <option>Partnership (for lenders)</option>
+            <option>Complaint / grievance</option>
+            <option>Press &amp; media</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cMsg">Message *</label>
+          <textarea id="cMsg" placeholder="Tell us how we can help…"></textarea>
+        </div>
+        <button class="btn btn--primary btn--block" id="cSend">Send message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <div class="fstatus" id="cStatus"></div>
+        <p class="fnote">This opens your email app with the details filled in. Prefer email directly? Write to <a class="lnk" href="mailto:support@vyaaj.in">support@vyaaj.in</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRIEVANCE ESCALATION CALLOUT -->
+<section class="sec--teal callout">
+  <div class="wrap">
+    <div class="ctext">
+      <h3>Have a formal complaint?</h3>
+      <p>We take complaints seriously and follow a defined redressal process with timelines and an escalation path, in line with RBI expectations for digital lending intermediaries.</p>
+    </div>
+    <a class="btn btn--mint" href="grievance.html">Grievance redressal
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4>
+        <a href="personal-loan.html">Personal Loan</a>
+        <a href="home-loan.html">Home Loan</a>
+        <a href="business-loan.html">Business Loan</a>
+        <a href="loan-against-property.html">Loan Against Property</a>
+        <a href="balance-transfer.html">Balance Transfer</a>
+      </div>
+      <div class="fcol"><h4>Company</h4>
+        <a href="about.html">About Vyaaj</a>
+        <a href="how-we-make-money.html">How we make money</a>
+        <a href="partners.html">Partner lenders</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol"><h4>Legal &amp; help</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="grievance.html">Grievance redressal</a>
+        <a href="contact.html">Help centre</a>
+      </div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row">
+        <span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('cSend'),status=document.getElementById('cStatus');
+    var n=document.getElementById('cName'),e=document.getElementById('cEmail'),p=document.getElementById('cPhone'),t=document.getElementById('cTopic'),m=document.getElementById('cMsg');
+    function valid(email){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);}
+    function route(topic){
+      if(/partnership/i.test(topic))return 'partners@vyaaj.in';
+      if(/grievance|complaint/i.test(topic))return 'grievance@vyaaj.in';
+      return 'support@vyaaj.in';
+    }
+    btn.addEventListener('click',function(){
+      var name=n.value.trim(),email=e.value.trim(),phone=p.value.trim(),topic=t.value,msg=m.value.trim();
+      if(!name||!email||!msg){status.style.color='#C0392B';status.textContent='Please fill in your name, email and message.';return;}
+      if(!valid(email)){status.style.color='#C0392B';status.textContent='That email doesn\u2019t look right — please check it.';return;}
+      var to=route(topic);
+      var subject='['+topic+'] message from '+name;
+      var body='Name: '+name+'\nEmail: '+email+'\nPhone: '+(phone||'—')+'\nTopic: '+topic+'\n\n'+msg;
+      status.style.color='var(--teal)';status.textContent='Opening your email app…';
+      window.location.href='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    });
+  })();
+  (function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>

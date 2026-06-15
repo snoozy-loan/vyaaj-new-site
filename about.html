@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Vyaaj — Making borrowing honest</title>
+<meta name="description" content="Vyaaj is a loan marketplace built to make borrowing honest in India — compare every offer, see the true cost, and pick the rate that's actually yours. Built by technologists, not bankers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;--ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;--shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}.wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}.btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .btn--mint{background:var(--mint);color:var(--teal-deep)}.btn--mint:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(52,211,153,.6)}
+  .btn--ghost{background:transparent;color:var(--teal);padding:14px 18px}
+  .btn--white{background:#fff;color:var(--teal)}.btn--white:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}.nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+  .sec{padding:78px 0}.sec--tight{padding:54px 0}.sec--teal{background:linear-gradient(160deg,var(--teal),var(--teal-deep));color:#fff}
+  .head{max-width:660px;margin:0 0 42px}
+  .head .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .head .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .sec--teal .head .kicker{color:var(--mint)}
+  .head h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:clamp(26px,3.4vw,34px);line-height:1.12;letter-spacing:-.02em;margin:0 0 12px}
+  .head p{margin:0;font-size:16.5px;color:var(--slate)}.sec--teal .head p{color:rgba(255,255,255,.8)}
+  .final{position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 80% 20%,rgba(52,211,153,.18),transparent 60%);pointer-events:none}
+  .final .wrap{position:relative;text-align:center;padding:74px 28px}
+  .final .mark{width:56px;height:56px;margin:0 auto 22px;--logo:#fff;--node:var(--mint)}
+  .final h2{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+  .final p{font-size:17px;color:rgba(255,255,255,.82);max-width:500px;margin:0 auto 28px}
+  .final .actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* about-specific */
+  .ahero{position:relative;overflow:hidden}
+  .ahero::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 60% at 85% 0%,rgba(52,211,153,.12),transparent 60%);pointer-events:none}
+  .ahero .wrap{position:relative;text-align:center;padding:74px 28px 60px;max-width:860px}
+  .ahero .kicker{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--teal);background:var(--mint-soft);border:1px solid #C3EAD9;padding:7px 14px;border-radius:999px;margin:0 0 24px;letter-spacing:.02em}
+  .ahero h1{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(38px,5.4vw,60px);margin:0 0 22px}
+  .ahero h1 em{font-style:normal;color:var(--teal)}
+  .ahero p{font-size:19px;color:var(--slate);max-width:620px;margin:0 auto;line-height:1.6}
+
+  .problem{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .problem .ptext p{font-size:16.5px;color:var(--slate);margin:0 0 16px}
+  .problem .ptext p b{color:var(--ink);font-weight:600}
+  .broken{display:flex;flex-direction:column;gap:14px}
+  .bitem{display:flex;gap:16px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:14px}
+  .bitem .x{flex:none;width:34px;height:34px;border-radius:9px;background:#FBEAEA;color:#C0392B;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+  .bitem h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;margin:2px 0 4px}
+  .bitem p{margin:0;font-size:14px;color:var(--slate);line-height:1.5}
+  @media(max-width:820px){.problem{grid-template-columns:1fr;gap:32px}}
+
+  .vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .vcard{padding:30px;background:#fff;border:1px solid var(--line);border-radius:18px}
+  .vcard .vic{width:48px;height:48px;border-radius:13px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .vcard .vic svg{width:24px;height:24px}
+  .vcard h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:19px;margin:0 0 8px}
+  .vcard p{margin:0;color:var(--slate);font-size:15px;line-height:1.55}
+  @media(max-width:720px){.vgrid{grid-template-columns:1fr}}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat .snum{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(32px,4vw,46px);line-height:1;letter-spacing:-.02em}
+  .stat .snum .acc{color:var(--mint)}
+  .stat .slab{margin-top:10px;font-size:14px;color:rgba(255,255,255,.75)}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr);gap:36px 24px}}
+
+  .pov{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .pov .povmark{display:flex;align-items:center;justify-content:center;background:var(--mint-soft);border:1px solid #CDEEDF;border-radius:22px;padding:56px}
+  .pov .povmark .mark{width:150px;height:150px;--logo:var(--teal);--node:var(--teal)}
+  .pov h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:clamp(26px,3.2vw,32px);line-height:1.12;letter-spacing:-.02em;margin:0 0 16px}
+  .pov p{margin:0 0 14px;color:var(--slate);font-size:16px}
+  .pov p b{color:var(--ink);font-weight:600}
+  @media(max-width:820px){.pov{grid-template-columns:1fr;gap:28px}.pov .povmark{order:-1;padding:40px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120"><polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></a>
+    <div class="links">
+      <a href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="vyaaj-landing-page.html#why">Why Vyaaj</a>
+      <a class="active" href="about.html">About</a>
+    </div>
+    <div class="cta"><a class="login" href="#">Log in</a><a class="btn btn--primary" href="vyaaj-landing-page.html#top">Compare offers</a></div>
+  </div>
+</nav>
+
+<header class="ahero">
+  <div class="wrap">
+    <span class="kicker">About Vyaaj</span>
+    <h1>We're here to make borrowing <em>honest</em>.</h1>
+    <p>Vyaaj — from व्याज, the word for <i>interest</i> — is a loan marketplace built on a simple belief: you should be able to see every offer, understand its true cost, and choose for yourself. No pressure, no jargon, no hidden fees.</p>
+  </div>
+</header>
+
+<section class="sec" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap reveal">
+    <div class="problem">
+      <div class="ptext">
+        <div class="head" style="margin-bottom:22px"><p class="kicker">The problem</p><h2 style="font-size:clamp(24px,3vw,30px)">Indians overpay on loans — quietly, constantly.</h2></div>
+        <p>Most people take whatever rate their bank offers, because comparing loans is genuinely hard. Rates are buried, fees are scattered, and the "lowest EMI" rarely means the lowest cost.</p>
+        <p>Worse, most comparison sites aren't neutral — they push you toward whoever pays them the highest commission. <b>The result is a market that profits from confusion.</b></p>
+        <p>We thought that was worth fixing.</p>
+      </div>
+      <div class="broken">
+        <div class="bitem"><span class="x">✕</span><div><h4>Hidden true cost</h4><p>A low headline rate hides processing fees, insurance and charges that quietly inflate what you repay.</p></div></div>
+        <div class="bitem"><span class="x">✕</span><div><h4>Biased recommendations</h4><p>Many platforms rank lenders by who pays them most, not by what's cheapest for you.</p></div></div>
+        <div class="bitem"><span class="x">✕</span><div><h4>Fear of the credit check</h4><p>People avoid shopping around because they wrongly believe every check dents their score.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap reveal">
+    <div class="head"><p class="kicker">What we believe</p><h2>Four principles we won't bend on</h2><p>They're the reason Vyaaj exists, and the test for every decision we make.</p></div>
+    <div class="vgrid">
+      <div class="vcard">
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Total transparency</h3>
+        <p>We show the full cost of every offer — APR, fees and total payable — in plain numbers. What you see is what you'll pay.</p>
+      </div>
+      <div class="vcard">
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Always on your side</h3>
+        <p>We rank offers by what's best for you, never by who pays us most. Every lender is treated the same way.</p>
+      </div>
+      <div class="vcard">
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Clarity over cleverness</h3>
+        <p>No jargon, no dark patterns, no fine print designed to trip you up. If a five-year-old couldn't follow it, we rewrite it.</p>
+      </div>
+      <div class="vcard">
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Built for India</h3>
+        <p>Designed for how Indians actually borrow — across languages, cities and income types, with RBI-registered lenders only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--teal sec--tight">
+  <div class="wrap reveal">
+    <div class="stats">
+      <div class="stat"><div class="snum">30<span class="acc">+</span></div><div class="slab">Lenders compared</div></div>
+      <div class="stat"><div class="snum">₹500<span class="acc">Cr</span></div><div class="slab">In loans matched</div></div>
+      <div class="stat"><div class="snum">4.6<span class="acc">★</span></div><div class="slab">Average user rating</div></div>
+      <div class="stat"><div class="snum">2<span class="acc">min</span></div><div class="slab">To see your offers</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap reveal">
+    <div class="pov">
+      <div>
+        <div class="head" style="margin-bottom:0"><p class="kicker">Who we are</p></div>
+        <h2>Technologists, not bankers. That's the point.</h2>
+        <p>We didn't come from the lending industry, so we don't carry its habits. We came to it as builders and borrowers who were tired of being kept in the dark.</p>
+        <p>That outsider's view is exactly why Vyaaj works the way it does: <b>we ask what would actually help you, then build it</b> — instead of defending how things have always been done.</p>
+        <p>We're an India-first team, building in the open, one honest decision at a time.</p>
+      </div>
+      <div class="povmark"><svg class="mark"><use href="#vyaaj-mark"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec--teal final">
+  <div class="wrap">
+    <svg class="mark"><use href="#vyaaj-mark"/></svg>
+    <h2>See what borrowing honestly feels like</h2>
+    <p>Compare your loan offers in two minutes — free, and with no impact on your credit score.</p>
+    <div class="actions">
+      <a class="btn btn--mint" href="vyaaj-landing-page.html#top">Compare my offers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--white" href="how-we-make-money.html">How we make money</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4><a href="personal-loan.html">Personal Loan</a><a href="home-loan.html">Home Loan</a><a href="business-loan.html">Business Loan</a><a href="loan-against-property.html">Loan Against Property</a><a href="balance-transfer.html">Balance Transfer</a></div>
+      <div class="fcol"><h4>Company</h4><a href="about.html">About Vyaaj</a><a href="how-we-make-money.html">How we make money</a><a href="partners.html">Partner lenders</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h4>Legal &amp; help</h4><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="grievance.html">Grievance redressal</a><a href="contact.html">Help centre</a></div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row"><span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span><span>Made in India 🇮🇳</span></div>
+    </div>
+  </div>
+</footer>
+<script>(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});els.forEach(function(e){io.observe(e)});})();</script>
+</body>
+</html>

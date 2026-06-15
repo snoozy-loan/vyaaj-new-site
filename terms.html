@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use | Vyaaj</title>
+<meta name="description" content="The terms that govern your use of Vyaaj — a loan marketplace operated by Trumflux Private Limited. Covers eligibility, responsibilities, disclaimers, liability and governing law.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;
+    --ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;
+    --shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}
+  .wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}
+  .btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}
+  .nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* legal layout */
+  .legal{padding:52px 0 90px}
+  .lhead{max-width:800px;margin:0 auto}
+  .lhead .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .lhead .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .lhead h1{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(30px,4vw,42px);line-height:1.08;letter-spacing:-.025em;margin:0 0 10px}
+  .lmeta{color:var(--slate);font-size:14px;margin:0 0 26px}
+  .notice{max-width:800px;margin:0 auto 36px;background:#FFF8E8;border:1px solid #F0E2B6;border-radius:14px;padding:15px 18px;font-size:13.5px;line-height:1.6;color:#7A5B12;display:flex;gap:12px}
+  .notice svg{flex:none;width:20px;height:20px;color:#C99A1E;margin-top:1px}
+  .prose{max-width:800px;margin:0 auto}
+  .prose h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:21px;letter-spacing:-.01em;margin:40px 0 12px;color:var(--ink);scroll-margin-top:84px}
+  .prose h2:first-of-type{margin-top:0}
+  .prose h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:16.5px;margin:26px 0 8px;color:var(--ink)}
+  .prose p{margin:0 0 14px;color:var(--slate);font-size:15.5px}
+  .prose ul{margin:0 0 16px;padding-left:0;list-style:none}
+  .prose li{position:relative;padding:5px 0 5px 24px;color:var(--slate);font-size:15.5px}
+  .prose li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  .prose b{color:var(--ink);font-weight:600}
+  .prose a{color:var(--teal);font-weight:600}
+  .prose a:hover{text-decoration:underline}
+  .placeholder{color:var(--slate);font-style:italic}
+
+  /* mini table of contents */
+  .toc{max-width:800px;margin:0 auto 30px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;box-shadow:var(--shadow-sm)}
+  .toc h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--slate);margin:0 0 12px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:32px}
+  .toc li{font-size:14px;margin-bottom:8px;color:var(--teal)}
+  .toc li a{color:var(--teal);font-weight:500}
+  .toc li a:hover{text-decoration:underline}
+  @media(max-width:560px){.toc ol{columns:1}}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px;margin-top:10px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120">
+    <polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home">
+      <svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span>
+    </a>
+    <div class="links">
+      <a href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="about.html">About</a>
+      <a href="partners.html">For lenders</a>
+    </div>
+    <div class="cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn--primary" href="contact.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<section class="legal">
+  <div class="wrap">
+    <div class="lhead">
+      <div class="kicker">Terms of use</div>
+      <h1>The terms behind using Vyaaj</h1>
+      <p class="lmeta">Last updated: 9 June 2025 · Applies to Vyaaj, operated by Trumflux Private Limited</p>
+    </div>
+
+    <div class="toc">
+      <h4>On this page</h4>
+      <ol>
+        <li><a href="#accept">Accepting these terms</a></li>
+        <li><a href="#what">What Vyaaj is</a></li>
+        <li><a href="#eligible">Who can use Vyaaj</a></li>
+        <li><a href="#resp">Your responsibilities</a></li>
+        <li><a href="#noguarantee">No guarantee of approval</a></li>
+        <li><a href="#lenders">Third-party lenders</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#use">Acceptable use</a></li>
+        <li><a href="#disclaimer">Disclaimers</a></li>
+        <li><a href="#liability">Limitation of liability</a></li>
+        <li><a href="#indemnity">Indemnity</a></li>
+        <li><a href="#law">Governing law</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <div class="prose">
+      <p>These Terms of Use ("Terms") set out the rules for using Vyaaj. They're written to be readable, not to trip you up — but they are a binding agreement, so please read them. By using Vyaaj, you agree to them.</p>
+
+      <h2 id="accept">Accepting these terms</h2>
+      <p>By accessing or using the Vyaaj website, app or services ("the Platform"), you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you don't agree, please don't use the Platform. If you're using Vyaaj on behalf of a business, you confirm you're authorised to accept these Terms for it.</p>
+
+      <h2 id="what">What Vyaaj is</h2>
+      <p>Vyaaj is a <b>digital loan marketplace</b> operated by <b>Trumflux Private Limited</b>. We help you discover, compare and connect with loan products offered by banks and RBI-registered NBFCs. To be clear:</p>
+      <ul>
+        <li>Vyaaj is <b>not a lender</b>, bank or NBFC, and does not lend money or take deposits.</li>
+        <li>We don't decide whether you're approved, or on what rate or terms — the lender does, at its sole discretion.</li>
+        <li>Any loan you take is a contract between <b>you and the lender</b>, governed by the lender's own terms.</li>
+        <li>Rates, EMIs and eligibility shown on Vyaaj are <b>indicative and for illustration</b>, not an offer or commitment.</li>
+      </ul>
+
+      <h2 id="eligible">Who can use Vyaaj</h2>
+      <p>To use the Platform, you must:</p>
+      <ul>
+        <li>Be at least <b>18 years old</b> and able to enter into a legally binding contract under Indian law;</li>
+        <li>Be a <b>resident of India</b>; and</li>
+        <li>Use Vyaaj for lawful, personal or business borrowing purposes — not on behalf of someone else without authority.</li>
+      </ul>
+
+      <h2 id="resp">Your responsibilities</h2>
+      <p>When you use Vyaaj, you agree to:</p>
+      <ul>
+        <li>Provide information that is <b>accurate, current and complete</b>, and keep it updated.</li>
+        <li>Keep your account credentials secure and not share them; you're responsible for activity under your account.</li>
+        <li>Submit only documents and details that are genuinely yours and that you're entitled to share.</li>
+        <li>Make your own assessment of any loan before accepting it — including the rate, fees, charges and repayment terms set out in the lender's documents.</li>
+        <li>Repay any loan you take directly to the lender, as per your agreement with them.</li>
+      </ul>
+
+      <h2 id="noguarantee">No guarantee of approval or rates</h2>
+      <p>Using Vyaaj, checking eligibility or seeing an indicative offer does <b>not</b> guarantee that any lender will approve you, or offer you a particular amount, rate or tenure. Final terms depend on the lender's own assessment, policies and RBI guidelines, and may differ from what's shown on the Platform.</p>
+
+      <h2 id="lenders">Third-party lenders and content</h2>
+      <p>The Platform features products from third-party lenders and may link to their sites. We don't control those lenders or sites, and we're not responsible for their products, decisions, terms, conduct or content. Any dealings you have with a lender — including the loan itself, its servicing and any dispute — are between you and that lender. Loan-related grievances are handled as described on our <a href="grievance.html">grievance redressal</a> page.</p>
+
+      <h2 id="ip">Our intellectual property</h2>
+      <p>The Vyaaj name, logo, design, text, graphics, software and other content on the Platform are owned by Trumflux Private Limited or its licensors and are protected by law. You may use the Platform for its intended purpose, but you may not copy, modify, distribute, scrape, reverse-engineer or commercially exploit any part of it without our prior written permission. Lender names and logos shown on the Platform belong to their respective owners.</p>
+
+      <h2 id="use">Acceptable use</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the Platform for any unlawful, fraudulent or misleading purpose;</li>
+        <li>Provide false information or impersonate any person or entity;</li>
+        <li>Attempt to gain unauthorised access to our systems, or disrupt or overload the Platform;</li>
+        <li>Use bots, scrapers or automated means to access or extract data, except as expressly permitted;</li>
+        <li>Upload anything malicious, or infringe the rights of others; or</li>
+        <li>Misuse the Platform in any way that harms Vyaaj, our partners or other users.</li>
+      </ul>
+      <p>We may suspend or terminate access if we reasonably believe these Terms have been breached.</p>
+
+      <h2 id="disclaimer">Disclaimers</h2>
+      <p>The Platform and its content are provided on an <b>"as is" and "as available"</b> basis. To the extent permitted by law, we don't warrant that the Platform will be uninterrupted, error-free or secure, or that any information, rate or estimate shown is accurate, complete or current. Indicative figures are illustrative and may change. Nothing on Vyaaj is financial, legal or tax advice — please make your own decisions and seek professional advice where needed.</p>
+
+      <h2 id="liability">Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, Trumflux Private Limited, its directors, employees and partners will not be liable for any indirect, incidental, special or consequential losses, or any loss of profit, data or goodwill, arising from your use of (or inability to use) the Platform, or from any loan or dealing with a lender. Our total liability for any claim relating to the Platform is limited to ₹2,00,000 (Rupees Two Lakh). Nothing here limits any liability that cannot be excluded under applicable law.</p>
+
+      <h2 id="indemnity">Indemnity</h2>
+      <p>You agree to indemnify and hold harmless Trumflux Private Limited and its team from any claims, losses, liabilities and reasonable expenses arising out of your misuse of the Platform, your breach of these Terms, or your violation of any law or third-party right.</p>
+
+      <h2 id="law">Governing law and jurisdiction</h2>
+      <p>These Terms are governed by the laws of India. Subject to any applicable consumer-protection rights, the courts at <b>Bengaluru, Karnataka</b> will have exclusive jurisdiction over any dispute relating to these Terms or the Platform.</p>
+
+      <h2 id="changes">Changes to the Platform and these terms</h2>
+      <p>We're always improving Vyaaj, so we may add, change or discontinue features, and we may update these Terms from time to time. When we make material changes, we'll update the "last updated" date above and, where appropriate, notify you. Continuing to use the Platform after changes means you accept the revised Terms.</p>
+
+      <h2 id="contact">How to contact us</h2>
+      <p>Questions about these Terms? Get in touch:</p>
+      <ul>
+        <li>Email: <a href="mailto:support@vyaaj.in">support@vyaaj.in</a></li>
+        <li>Or use our <a href="contact.html">contact form</a></li>
+      </ul>
+      <p>Vyaaj is operated by <b>Trumflux Private Limited</b>, 626/E, HSR Jupiter, 1st Main Road, Sector 6, HSR Layout, Bengaluru, Karnataka 560102.</p>
+
+      <p style="margin-top:26px"><a href="contact.html">← Back to Contact &amp; help</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4>
+        <a href="personal-loan.html">Personal Loan</a>
+        <a href="home-loan.html">Home Loan</a>
+        <a href="business-loan.html">Business Loan</a>
+        <a href="loan-against-property.html">Loan Against Property</a>
+        <a href="balance-transfer.html">Balance Transfer</a>
+      </div>
+      <div class="fcol"><h4>Company</h4>
+        <a href="about.html">About Vyaaj</a>
+        <a href="how-we-make-money.html">How we make money</a>
+        <a href="partners.html">Partner lenders</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol"><h4>Legal &amp; help</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="grievance.html">Grievance redressal</a>
+        <a href="contact.html">Help centre</a>
+      </div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row">
+        <span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

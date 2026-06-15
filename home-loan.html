@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Loan — Compare rates from top lenders | Vyaaj</title>
+<meta name="description" content="Compare home loan and balance-transfer offers from leading housing finance companies and banks on Vyaaj. See real rates, EMIs and total cost upfront. Free to check, no impact on your credit score.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#0D4A50;--teal-deep:#0A373C;--teal-700:#0F5860;--mint:#34D399;--mint-soft:#D7F4E9;--ink:#0A1F22;--slate:#5C6B6E;--mist:#E7EFEF;--paper:#F5F8F8;--white:#fff;--line:#DCE6E6;--shadow:0 18px 50px -20px rgba(13,74,80,.35);--shadow-sm:0 8px 24px -12px rgba(13,74,80,.25);--maxw:1120px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mark{display:block}.wordmark{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-0.025em;line-height:1;white-space:nowrap;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:0;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15.5px;letter-spacing:-.01em;padding:14px 24px;border-radius:12px;transition:transform .15s,box-shadow .15s,background .15s;line-height:1}
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--teal);color:#fff}.btn--primary:hover{background:var(--teal-700);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .btn--mint{background:var(--mint);color:var(--teal-deep)}.btn--mint:hover{transform:translateY(-1px);box-shadow:0 10px 26px -10px rgba(52,211,153,.6)}
+  .btn--ghost{background:transparent;color:var(--teal);padding:14px 18px}
+  .btn--white{background:#fff;color:var(--teal)}.btn--white:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  :focus-visible{outline:2.5px solid var(--mint);outline-offset:3px;border-radius:6px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.82);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav .brand{display:flex;align-items:center;gap:10px;color:var(--teal);--logo:var(--teal);--node:var(--mint)}
+  .nav .brand .mark{width:27px;height:27px}.nav .brand .wordmark{font-size:22px}
+  .nav .links{display:flex;align-items:center;gap:30px}
+  .nav .links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s}
+  .nav .links a:hover,.nav .links a.active{color:var(--teal)}
+  .nav .cta{display:flex;align-items:center;gap:8px}.nav .cta .btn{padding:11px 18px;font-size:14.5px}
+  .nav .cta .login{font-family:"Inter";font-weight:600;font-size:14.5px;color:var(--teal);padding:8px 6px}
+  @media(max-width:900px){.nav .links{display:none}}
+  .sec{padding:78px 0}.sec--tight{padding:54px 0}.sec--teal{background:linear-gradient(160deg,var(--teal),var(--teal-deep));color:#fff}
+  .head{max-width:640px;margin:0 0 42px}
+  .head .kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .head .kicker::before{content:"";width:24px;height:2px;background:var(--mint);border-radius:2px}
+  .sec--teal .head .kicker{color:var(--mint)}
+  .head h2{font-family:"Plus Jakarta Sans";font-weight:700;font-size:clamp(26px,3.4vw,34px);line-height:1.12;letter-spacing:-.02em;margin:0 0 12px}
+  .head p{margin:0;font-size:16.5px;color:var(--slate)}.sec--teal .head p{color:rgba(255,255,255,.8)}
+  .crumb{padding:18px 0 0}.crumb .wrap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate)}
+  .crumb a:hover{color:var(--teal)}.crumb .sep{opacity:.5}.crumb .cur{color:var(--ink);font-weight:600}
+  .phero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:46px 28px 64px}
+  .phero .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--teal);background:var(--mint-soft);border:1px solid #C3EAD9;padding:7px 14px;border-radius:999px;margin:0 0 20px}
+  .phero .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  .phero h1{font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(34px,4.6vw,50px);margin:0 0 18px}
+  .phero h1 em{font-style:normal;color:var(--teal)}
+  .phero .sub{font-size:18px;color:var(--slate);max-width:500px;margin:0 0 28px}
+  .phero .actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:20px}
+  .phero .reassure{display:flex;gap:18px;flex-wrap:wrap;color:var(--slate);font-size:13.5px;font-weight:500}
+  .phero .reassure span{display:inline-flex;align-items:center;gap:7px}.phero .reassure svg{width:15px;height:15px;color:var(--mint)}
+  .factcard{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden}
+  .factcard .fc{padding:18px}
+  .factcard .fc .v{font-family:"Plus Jakarta Sans";font-weight:800;font-size:26px;color:var(--teal);letter-spacing:-.02em}
+  .factcard .fc .v small{font-size:15px;color:var(--slate);font-weight:600}
+  .factcard .fc .l{font-size:13px;color:var(--slate);margin-top:4px}
+  .factcard .fc:nth-child(1),.factcard .fc:nth-child(2){border-bottom:1px solid var(--line)}
+  .factcard .fc:nth-child(odd){border-right:1px solid var(--line)}
+  .calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+  .calc-controls,.calc-result{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+  .control{margin-bottom:20px}.control:last-child{margin-bottom:0}
+  .control .crow{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+  .control label{font-size:13.5px;font-weight:600;color:var(--slate)}
+  .control .cval{font-family:"Plus Jakarta Sans";font-weight:700;font-size:18px;color:var(--teal);font-variant-numeric:tabular-nums}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:var(--mist);outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--teal);border:4px solid #fff;box-shadow:0 2px 8px rgba(13,74,80,.35);cursor:pointer}
+  input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--teal);border:4px solid #fff;box-shadow:0 2px 8px rgba(13,74,80,.35);cursor:pointer}
+  .calc-result{background:linear-gradient(160deg,var(--teal),var(--teal-deep));color:#fff;display:flex;flex-direction:column;justify-content:center}
+  .calc-result .emi-lab{font-size:14px;color:rgba(255,255,255,.75)}
+  .calc-result .emi-val{font-family:"Plus Jakarta Sans";font-weight:800;font-size:46px;line-height:1.1;letter-spacing:-.02em;margin:4px 0 22px;font-variant-numeric:tabular-nums}
+  .bar{height:12px;border-radius:8px;background:rgba(255,255,255,.18);overflow:hidden;display:flex;margin-bottom:14px}
+  .bar .p{background:var(--mint)}.bar .i{background:rgba(255,255,255,.45)}
+  .legend{display:flex;gap:20px;font-size:13px;color:rgba(255,255,255,.85)}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px}
+  .legend .lp i{background:var(--mint)}.legend .li i{background:rgba(255,255,255,.45)}
+  .legend .num{font-family:"Plus Jakarta Sans";font-weight:700;color:#fff;display:block;margin-top:2px;font-variant-numeric:tabular-nums}
+  .calc-note{font-size:12px;color:var(--slate);margin-top:14px}
+  .ratewrap{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+  table.rates{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.rates th,table.rates td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--mist)}
+  table.rates thead th{background:var(--paper);font-family:"Plus Jakarta Sans";font-weight:700;font-size:13px;color:var(--slate);letter-spacing:.02em}
+  table.rates tbody tr:last-child td{border-bottom:0}
+  table.rates td.lender{font-family:"Plus Jakarta Sans";font-weight:700;color:var(--ink)}
+  table.rates td .r{font-family:"Plus Jakarta Sans";font-weight:700;color:var(--teal)}
+  .tnote{font-size:12.5px;color:var(--slate);margin-top:14px}
+  @media(max-width:680px){table.rates th:nth-child(4),table.rates td:nth-child(4){display:none}}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .listcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}
+  .listcard h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:19px;margin:0 0 18px;display:flex;align-items:center;gap:10px}
+  .listcard h3 .ic{width:34px;height:34px;border-radius:9px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center}
+  .listcard h3 .ic svg{width:18px;height:18px}
+  .listcard ul{margin:0;padding:0;list-style:none}
+  .listcard li{position:relative;padding:9px 0 9px 28px;font-size:14.5px;color:var(--slate);border-bottom:1px solid var(--mist)}
+  .listcard li:last-child{border-bottom:0}
+  .listcard li::before{content:"";position:absolute;left:0;top:15px;width:16px;height:16px;border-radius:50%;background:var(--mint-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D4A50' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");background-size:11px;background-position:center;background-repeat:no-repeat}
+  .listcard li b{color:var(--ink);font-weight:600}
+  @media(max-width:720px){.twocol{grid-template-columns:1fr}}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{position:relative;padding:28px 24px;background:#fff;border:1px solid var(--line);border-radius:18px}
+  .step .num{width:42px;height:42px;border-radius:12px;background:var(--mint-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans";font-weight:800;font-size:18px;margin-bottom:16px}
+  .step h3{font-family:"Plus Jakarta Sans";font-weight:700;font-size:18px;margin:0 0 7px}.step p{margin:0;color:var(--slate);font-size:14.5px}
+  @media(max-width:780px){.steps{grid-template-columns:1fr}}
+  .faq{max-width:780px}
+  .faq details{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:12px;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-family:"Plus Jakarta Sans";font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .pm{flex:none;width:22px;height:22px;color:var(--teal);transition:transform .2s}
+  .faq details[open] summary .pm{transform:rotate(45deg)}
+  .faq .ans{padding:0 22px 20px;color:var(--slate);font-size:15px}
+  .final{position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 80% 20%,rgba(52,211,153,.18),transparent 60%);pointer-events:none}
+  .final .wrap{position:relative;text-align:center;padding:74px 28px}
+  .final .mark{width:56px;height:56px;margin:0 auto 22px;--logo:#fff;--node:var(--mint)}
+  .final h2{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+  .final p{font-size:17px;color:rgba(255,255,255,.82);max-width:500px;margin:0 auto 28px}
+  .final .actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+  footer{background:var(--ink);color:rgba(255,255,255,.66);padding:60px 0 28px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{display:flex;align-items:center;gap:10px;color:#fff;--logo:#fff;--node:var(--mint);margin-bottom:16px}
+  footer .brand .mark{width:26px;height:26px}footer .brand .wordmark{font-size:22px}
+  footer .fabout{font-size:14px;line-height:1.6;max-width:300px;color:rgba(255,255,255,.6)}
+  footer .fcol h4{font-family:"Plus Jakarta Sans";font-weight:700;font-size:14px;color:#fff;margin:0 0 16px}
+  footer .fcol a{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.62);transition:color .15s}
+  footer .fcol a:hover{color:var(--mint)}
+  .fdisc{padding-top:24px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  .fdisc .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;color:rgba(255,255,255,.5)}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+  @media(max-width:900px){.phero .wrap{grid-template-columns:1fr;gap:34px;padding:34px 28px 52px}.calc-grid{grid-template-columns:1fr}}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vyaaj-mark" viewBox="0 0 120 120"><polyline points="27,42 53,89 95,23" fill="none" stroke="var(--logo,#0D4A50)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="95" cy="23" r="10" fill="var(--node,#34D399)"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="vyaaj-landing-page.html" aria-label="Vyaaj home"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></a>
+    <div class="links">
+      <a class="active" href="vyaaj-landing-page.html#products">Loans</a>
+      <a href="vyaaj-landing-page.html#how">How it works</a>
+      <a href="vyaaj-landing-page.html#why">Why Vyaaj</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="cta"><a class="login" href="#">Log in</a><a class="btn btn--primary" href="#calc">Compare offers</a></div>
+  </div>
+</nav>
+
+<div class="crumb"><div class="wrap"><a href="vyaaj-landing-page.html">Home</a><span class="sep">/</span><a href="vyaaj-landing-page.html#products">Loans</a><span class="sep">/</span><span class="cur">Home Loan</span></div></div>
+
+<header class="phero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Home Loan</span>
+      <h1>The home is yours. So should be the <em>lowest rate</em>.</h1>
+      <p class="sub">Compare home loan and balance-transfer offers from leading housing finance companies and banks — to buy, build, or move an existing loan to a cheaper lender.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#calc">Compare my offers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#eligibility">Check eligibility</a>
+      </div>
+      <div class="reassure">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>No impact on credit score</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Tax benefits up to ₹3.5 Lakh</span>
+      </div>
+    </div>
+    <div class="factcard">
+      <div class="fc"><div class="v">8.35%<small> p.a.</small></div><div class="l">Interest rate, starting from</div></div>
+      <div class="fc"><div class="v">₹5<small> Cr+</small></div><div class="l">Maximum loan amount</div></div>
+      <div class="fc"><div class="v">Up to 30<small> yrs</small></div><div class="l">Long, flexible tenure</div></div>
+      <div class="fc"><div class="v">Up to 90%<small></small></div><div class="l">Of property value (LTV)</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="calc" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap reveal">
+    <div class="head"><p class="kicker">EMI calculator</p><h2>Plan your home loan EMI</h2><p>A small change in rate makes a big difference over 20 years. Model it here, then compare lenders.</p></div>
+    <div class="calc-grid">
+      <div class="calc-controls">
+        <div class="control"><div class="crow"><label for="amt">Loan amount</label><span class="cval" id="amtOut">₹50,00,000</span></div><input type="range" id="amt" min="500000" max="20000000" step="100000" value="5000000"></div>
+        <div class="control"><div class="crow"><label for="rate">Interest rate (p.a.)</label><span class="cval" id="rateOut">8.6%</span></div><input type="range" id="rate" min="8" max="12" step="0.05" value="8.6"></div>
+        <div class="control"><div class="crow"><label for="ten">Tenure</label><span class="cval" id="tenOut">20 years</span></div><input type="range" id="ten" min="60" max="360" step="12" value="240"></div>
+        <p class="calc-note">Illustrative only. Your actual rate depends on the lender, property and your profile.</p>
+      </div>
+      <div class="calc-result">
+        <div class="emi-lab">Your monthly EMI</div>
+        <div class="emi-val" id="emiOut">₹43,700</div>
+        <div class="bar"><div class="p" id="barP" style="width:48%"></div><div class="i" id="barI" style="width:52%"></div></div>
+        <div class="legend"><span class="lp"><i></i>Principal<span class="num" id="prinOut">₹50,00,000</span></span><span class="li"><i></i>Total interest<span class="num" id="intOut">₹54,88,000</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap reveal">
+    <div class="head"><p class="kicker">Lender rates</p><h2>Home loan rates, compared</h2><p>Indicative starting rates across leading housing finance companies. Your matched offers are personalised after a free soft check.</p></div>
+    <div class="ratewrap">
+      <table class="rates">
+        <thead><tr><th>Lender</th><th>Interest rate (p.a.)</th><th>Processing fee</th><th>Max LTV</th></tr></thead>
+        <tbody>
+          <tr><td class="lender">Bajaj Housing Finance</td><td><span class="r">8.50%</span> onwards</td><td>Up to 0.50%</td><td>90%</td></tr>
+          <tr><td class="lender">LIC Housing Finance</td><td><span class="r">8.60%</span> onwards</td><td>Up to 0.50%</td><td>90%</td></tr>
+          <tr><td class="lender">PNB Housing Finance</td><td><span class="r">8.75%</span> onwards</td><td>0.25%–1%</td><td>85%</td></tr>
+          <tr><td class="lender">Tata Capital Housing</td><td><span class="r">8.90%</span> onwards</td><td>Up to 0.50%</td><td>85%</td></tr>
+          <tr><td class="lender">Aditya Birla Housing</td><td><span class="r">9.00%</span> onwards</td><td>Up to 1%</td><td>80%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">Rates, fees and LTV shown are indicative, for illustration only, and decided by each lender at its discretion. Not an offer or a guarantee of approval.</p>
+  </div>
+</section>
+
+<section class="sec anchor" id="eligibility" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap reveal">
+    <div class="head"><p class="kicker">Eligibility &amp; documents</p><h2>What you'll need to apply</h2><p>Home loans are secured against the property, so lenders assess both you and the home.</p></div>
+    <div class="twocol">
+      <div class="listcard">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0" stroke-linecap="round"/></svg></span>Who can apply</h3>
+        <ul>
+          <li>Salaried or self-employed, <b>aged 23 to 65</b></li>
+          <li>Stable income that comfortably covers the EMI</li>
+          <li>Credit score of <b>750+</b> for the best rates</li>
+          <li>A clear, identified property with valid title</li>
+          <li>Co-applicants (e.g. spouse) can boost eligibility</li>
+        </ul>
+      </div>
+      <div class="listcard">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 3h7l5 5v13H7z" stroke-linejoin="round"/><path d="M14 3v5h5"/></svg></span>Documents needed</h3>
+        <ul>
+          <li><b>Identity &amp; address</b> — PAN and Aadhaar</li>
+          <li><b>Income proof</b> — salary slips &amp; Form 16, or ITR for self-employed</li>
+          <li><b>Bank statements</b> — last 6 months</li>
+          <li><b>Property documents</b> — sale agreement, title deed, approvals</li>
+          <li>For transfers — existing loan statement &amp; sanction letter</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap reveal">
+    <div class="head"><p class="kicker">How to apply</p><h2>From comparison to keys in three steps</h2></div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Share your details</h3><p>Loan amount, property and a few quick facts. Fully online, about two minutes.</p></div>
+      <div class="step"><div class="num">2</div><h3>Compare real offers</h3><p>Rates, EMIs and total cost side by side, with a soft check that won't touch your score.</p></div>
+      <div class="step"><div class="num">3</div><h3>Apply with confidence</h3><p>Pick your lender, submit documents, and complete valuation and sanction with their team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec anchor" id="faq" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap reveal">
+    <div class="head"><p class="kicker">Good to know</p><h2>Home loan questions</h2></div>
+    <div class="faq">
+      <details open><summary>Fixed or floating — which should I pick?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Most home loans in India are floating-rate, which moves with the lender's benchmark. Fixed rates give certainty but are usually higher. Vyaaj shows both so you can weigh predictability against cost.</div></details>
+      <details><summary>How much can I borrow against my property?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Lenders typically fund up to 75%–90% of the property's value (the loan-to-value ratio), depending on the loan amount and lender policy. The rest is your down payment.</div></details>
+      <details><summary>What tax benefits do I get?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Under the old tax regime, you can claim up to ₹1.5 Lakh on principal (Section 80C) and up to ₹2 Lakh on interest (Section 24b) for a self-occupied home. Please confirm current limits with a tax advisor for your situation.</div></details>
+      <details><summary>Can I transfer my existing home loan to a lower rate?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. A balance transfer moves your outstanding loan to a lender offering a lower rate, cutting your EMI or tenure. Vyaaj compares transfer offers and shows the savings net of any switching costs.</div></details>
+      <details><summary>Are there prepayment charges?<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">For floating-rate home loans to individuals, RBI guidelines do not permit foreclosure or prepayment penalties. Fixed-rate loans may carry a charge, which Vyaaj will show on the offer.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec--teal final">
+  <div class="wrap">
+    <svg class="mark"><use href="#vyaaj-mark"/></svg>
+    <h2>Compare home loan rates in two minutes</h2>
+    <p>Free, with no impact on your credit score. Even a 0.5% lower rate can save you lakhs over the life of the loan.</p>
+    <div class="actions">
+      <a class="btn btn--mint" href="#calc">Compare my offers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--white" href="vyaaj-landing-page.html#how">How it works</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><svg class="mark"><use href="#vyaaj-mark"/></svg><span class="wordmark">Vyaaj</span></div>
+        <p class="fabout">The honest way to borrow. Compare loans from across the market, see the true cost, and pick the rate that's actually yours.</p>
+      </div>
+      <div class="fcol"><h4>Loans</h4><a href="personal-loan.html">Personal Loan</a><a href="home-loan.html">Home Loan</a><a href="business-loan.html">Business Loan</a><a href="loan-against-property.html">Loan Against Property</a><a href="balance-transfer.html">Balance Transfer</a></div>
+      <div class="fcol"><h4>Company</h4><a href="about.html">About Vyaaj</a><a href="how-we-make-money.html">How we make money</a><a href="partners.html">Partner lenders</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h4>Legal &amp; help</h4><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="grievance.html">Grievance redressal</a><a href="contact.html">Help centre</a></div>
+    </div>
+    <div class="fdisc">
+      <p><b style="color:rgba(255,255,255,.7)">Disclaimer:</b> Vyaaj is a digital loan marketplace and does not lend money itself. All loans are provided by partner banks and RBI-registered NBFCs/HFCs at their sole discretion. Interest rates, fees and terms are decided by the lender. Rates and EMIs shown are indicative, for illustration only, and are not an offer or guarantee of approval. Credit at the sole discretion of the lender and subject to RBI guidelines.</p>
+      <div class="row"><span>© 2026 Vyaaj. All rights reserved. &nbsp;·&nbsp; Powered by <b style="color:rgba(255,255,255,.66);font-weight:600">Trumflux Private Limited</b></span><span>Made in India 🇮🇳</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var amt=document.getElementById('amt'),rate=document.getElementById('rate'),ten=document.getElementById('ten');
+    var amtOut=document.getElementById('amtOut'),rateOut=document.getElementById('rateOut'),tenOut=document.getElementById('tenOut');
+    var emiOut=document.getElementById('emiOut'),prinOut=document.getElementById('prinOut'),intOut=document.getElementById('intOut');
+    var barP=document.getElementById('barP'),barI=document.getElementById('barI');
+    function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
+    function fill(el){var p=((el.value-el.min)/(el.max-el.min))*100;el.style.background='linear-gradient(90deg,var(--teal) '+p+'%,var(--mist) '+p+'%)';}
+    function yrs(m){var y=Math.round(m/12);return y+' year'+(y>1?'s':'');}
+    function calc(){
+      var P=+amt.value,r=+rate.value/100/12,n=+ten.value;
+      var e=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+      var total=e*n,interest=total-P;
+      amtOut.textContent=inr(P);rateOut.textContent=(+rate.value).toFixed(2).replace(/0$/,'').replace(/\.$/,'')+'%';tenOut.textContent=yrs(n);
+      emiOut.textContent=inr(e);prinOut.textContent=inr(P);intOut.textContent=inr(interest);
+      var pp=P/total*100;barP.style.width=pp+'%';barI.style.width=(100-pp)+'%';
+      fill(amt);fill(rate);fill(ten);
+    }
+    [amt,rate,ten].forEach(function(el){el.addEventListener('input',calc);});calc();
+  })();
+  (function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>
