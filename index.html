@@ -316,8 +316,7 @@
       <a href="#faq">FAQ</a>
     </div>
     <div class="cta">
-      <a class="login" href="#">Log in</a>
-      <a class="btn btn--primary" href="#top">Compare offers</a>
+      <a class="btn btn--primary" href="#top" onclick="openLeadModal();return false;">Apply for a loan</a>
     </div>
   </div>
 </nav>
@@ -342,59 +341,57 @@
       </div>
     </div>
 
-    <!-- INTERACTIVE OFFER FINDER -->
-    <div class="finder" aria-label="Loan offer comparison preview">
+    <!-- LEAD CAPTURE FORM -->
+    <div class="finder" aria-label="Apply for a loan">
       <div class="ftop">
-        <span class="ftitle">Your offers, side by side</span>
-        <span class="fbadge">Live preview</span>
+        <span class="ftitle">Apply for a loan</span>
+        <span class="fbadge">Free · 2 mins</span>
       </div>
-
-      <div class="control">
-        <div class="crow"><label for="amount">Loan amount</label><span class="cval" id="amountOut">₹4,00,000</span></div>
-        <input type="range" id="amount" min="50000" max="2000000" step="10000" value="400000" aria-label="Loan amount in rupees">
-      </div>
-
-      <div class="control">
-        <div class="crow"><label for="tenure">Tenure</label><span class="cval" id="tenureOut">36 months</span></div>
-        <input type="range" id="tenure" min="12" max="60" step="6" value="36" aria-label="Tenure in months">
-      </div>
-
-      <div class="control">
-        <div class="crow"><label>Purpose</label></div>
-        <div class="chips" id="purpose" role="group" aria-label="Loan purpose">
-          <button class="chip" data-adj="0" aria-pressed="true">Personal</button>
-          <button class="chip" data-adj="1.2" aria-pressed="false">Business</button>
-          <button class="chip" data-adj="0.3" aria-pressed="false">Wedding</button>
-          <button class="chip" data-adj="-0.6" aria-pressed="false">Home reno</button>
-          <button class="chip" data-adj="-0.4" aria-pressed="false">Education</button>
+      <form id="hero-lead-form" onsubmit="submitHeroForm(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:12px;font-weight:600;color:var(--slate)">Full name *</label>
+            <input name="name" placeholder="Your name" required style="padding:9px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;width:100%;font-family:inherit" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:12px;font-weight:600;color:var(--slate)">Mobile number *</label>
+            <input name="mobile" type="tel" pattern="[0-9]{10}" placeholder="10-digit number" required style="padding:9px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;width:100%;font-family:inherit" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:12px;font-weight:600;color:var(--slate)">Email *</label>
+            <input name="email" type="email" placeholder="you@email.com" required style="padding:9px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;width:100%;font-family:inherit" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:12px;font-weight:600;color:var(--slate)">City *</label>
+            <input name="city" placeholder="Your city" required style="padding:9px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;width:100%;font-family:inherit" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:12px;font-weight:600;color:var(--slate)">Monthly income (₹) *</label>
+            <input name="income" type="number" min="10000" placeholder="e.g. 35000" required style="padding:9px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;width:100%;font-family:inherit" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:12px;font-weight:600;color:var(--slate)">Employment type *</label>
+            <select name="employment" required style="padding:9px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;outline:none;width:100%;font-family:inherit;background:#fff;color:var(--ink)" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'">
+              <option value="">Select...</option>
+              <option value="Salaried">Salaried</option>
+              <option value="Self-employed">Self-employed</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
         </div>
-      </div>
-
-      <div class="offers" id="offers"><!-- rendered by JS --></div>
-
-      <div class="ffoot">
-        <a class="btn btn--mint" href="#top">See my real offers
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="fnote">Indicative offers shown for illustration. Your real rates appear after a free soft check — no impact on your score.</p>
-      </div>
+        <div style="margin-top:14px">
+          <button type="submit" class="btn btn--mint" id="hero-submit-btn" style="width:100%;justify-content:center;font-size:15px">
+            Get my loan offers
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <p style="text-align:center;font-size:11.5px;color:var(--slate);margin-top:10px">Free · No impact on credit score · Takes 2 minutes</p>
+      </form>
     </div>
   </div>
 </header>
 
-<!-- TRUST STRIP -->
-<div class="trust">
-  <div class="wrap">
-    <span class="tlead">Comparing offers across leading banks &amp; RBI-registered NBFCs</span>
-    <div class="tlogos">
-      <span class="tlogo">Bajaj Finance</span>
-      <span class="tlogo">Tata Capital</span>
-      <span class="tlogo">Aditya Birla Finance</span>
-      <span class="tlogo">Poonawalla Fincorp</span>
-      <span class="tlogo">L&amp;T Finance</span>
-    </div>
-  </div>
-</div>
+
 
 <!-- HOW IT WORKS -->
 <section class="sec anchor" id="how">
@@ -754,6 +751,185 @@
     },{threshold:0.1});
     els.forEach(function(e){io.observe(e)});
   })();
+
+
+  // Hero form submit
+  async function submitHeroForm(e) {
+    e.preventDefault();
+    var btn = document.getElementById('hero-submit-btn');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    var fd = new FormData(e.target);
+    var fields = {
+      'Name': fd.get('name'),
+      'Phone Number': fd.get('mobile'),
+      'Email': fd.get('email'),
+      'City': fd.get('city'),
+      'Monthly Income': fd.get('income'),
+      'Employment Type': fd.get('employment'),
+      'Submitted At': new Date().toISOString()
+    };
+    try {
+      var res = await fetch('https://hook.us2.make.com/8k19tf874lj8969obci2i2sz768hhukk', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(fields)
+      });
+      if(res.ok) {
+        e.target.reset();
+        document.getElementById('lead-success').style.display = 'flex';
+      } else { alert('Something went wrong. Please try again.'); }
+    } catch(err) { alert('Something went wrong. Please try again.'); }
+    btn.textContent = 'Get my loan offers';
+    btn.disabled = false;
+  }
+
+  // ---- Lead Modal ----
+  var AIRTABLE_TOKEN = 'patNqc2KWPi1PjeWH.ef41e834630bf8444308f97e2df18c1a3352e43be036c571b8d5d1e52a78a4b9';
+  var AIRTABLE_BASE  = 'appuPSq7fez4VFesJ';
+  var AIRTABLE_TABLE = 'tblSfwT2wIfTeu6mb';
+
+  function openLeadModal(){
+    document.getElementById('lead-modal').style.display='flex';
+    document.body.style.overflow='hidden';
+  }
+  function closeLeadModal(){
+    document.getElementById('lead-modal').style.display='none';
+    document.body.style.overflow='';
+  }
+
+  // Hijack all "Compare offers" / CTA buttons to open modal instead
+  document.querySelectorAll('a[href="#top"], a[href="#finder"]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openLeadModal();
+    });
+  });
+
+  // Close on overlay click
+  document.getElementById('lead-modal').addEventListener('click', function(e){
+    if(e.target === this) closeLeadModal();
+  });
+
+  document.getElementById('lead-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = document.getElementById('lead-submit-btn');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+
+    var fd = new FormData(this);
+    var fields = {
+      'Name': fd.get('name'),
+      'Phone Number': fd.get('mobile'),
+      'Email': fd.get('email'),
+      'DOB': fd.get('dob'),
+      'City': fd.get('city'),
+      'Pincode': fd.get('pincode'),
+      'Address': fd.get('address'),
+      'Monthly Income': fd.get('income'),
+      'Employment Type': fd.get('employment'),
+      'Submitted At': new Date().toISOString()
+    };
+
+    try {
+      var res = await fetch(MAKE_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields)
+      });
+      if(res.ok){
+        closeLeadModal();
+        document.getElementById('lead-success').style.display='flex';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch(err){
+      alert('Something went wrong. Please try again.');
+    }
+    btn.textContent = 'Get my loan offers';
+    btn.disabled = false;
+  });
+
+  var successEl = document.getElementById('lead-success');
+  if(successEl){ successEl.addEventListener('click', function(e){ if(e.target === this) this.style.display='none'; }); }
 </script>
+
+<!-- Lead capture modal -->
+<style>
+.vmodal-overlay{position:fixed;inset:0;background:rgba(10,31,34,0.6);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem}
+.vmodal{background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;position:relative}
+.vmodal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;color:#5C6B6E;font-size:22px;line-height:1;padding:4px 8px;border-radius:6px}
+.vmodal-close:hover{background:#f0f0f0}
+.vmodal h2{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:22px;color:#0A1F22;margin:0 0 4px;background:linear-gradient(135deg,#0D4A50,#34D399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.vmodal .vsub{font-size:14px;color:#5C6B6E;margin:0 0 1.25rem}
+.vbadges{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.vbadge{display:flex;align-items:center;gap:5px;font-size:12px;color:#0D4A50;font-weight:600}
+.vbadge svg{width:14px;height:14px;stroke:#34D399;fill:none;stroke-width:2.5}
+.vform-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.875rem}
+.vfg{display:flex;flex-direction:column;gap:4px}
+.vfg.full{grid-column:1/-1}
+.vfg label{font-size:12px;font-weight:600;color:#374151}
+.vfg input,.vfg select{padding:9px 12px;border:1.5px solid #DCE6E6;border-radius:8px;font-size:14px;color:#0A1F22;outline:none;width:100%;background:#fff;transition:border-color 0.2s}
+.vfg input:focus,.vfg select:focus{border-color:#0D4A50;box-shadow:0 0 0 3px rgba(13,74,80,0.08)}
+.vradios{display:flex;gap:1rem;flex-wrap:wrap;padding-top:4px}
+.vradio{display:flex;align-items:center;gap:5px;font-size:13px;color:#374151;cursor:pointer}
+.vradio input{accent-color:#0D4A50}
+.vform-actions{display:flex;gap:0.75rem;justify-content:flex-end;margin-top:1.25rem;padding-top:1rem;border-top:1px solid #f0f0f0}
+.vbtn-primary{background:#0D4A50;color:#fff;border:none;border-radius:10px;padding:11px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:"Plus Jakarta Sans",sans-serif;transition:background 0.2s}
+.vbtn-primary:hover{background:#0F5860}
+.vbtn-primary:disabled{opacity:0.6;cursor:not-allowed}
+.vbtn-outline{background:transparent;color:#0D4A50;border:1.5px solid #0D4A50;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.vbtn-outline:hover{background:#E7EFEF}
+.vsuccess-icon{width:64px;height:64px;background:#D7F4E9;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.vsuccess-icon svg{width:32px;height:32px;stroke:#0D4A50;fill:none;stroke-width:2.5}
+@media(max-width:480px){.vform-grid{grid-template-columns:1fr}.vfg.full{grid-column:1}.vform-actions{flex-direction:column}.vform-actions button{width:100%}}
+</style>
+
+<div class="vmodal-overlay" id="lead-modal">
+  <div class="vmodal">
+    <button class="vmodal-close" onclick="closeLeadModal()">×</button>
+    <h2>Get your best loan offer</h2>
+    <p class="vsub">Takes 2 minutes · No impact on credit score</p>
+    <div class="vbadges">
+      <span class="vbadge"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Free & instant</span>
+      <span class="vbadge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>100% secure</span>
+      <span class="vbadge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Results in 2 min</span>
+    </div>
+    <form id="lead-form">
+      <div class="vform-grid">
+        <div class="vfg"><label>Full name *</label><input name="name" placeholder="Your full name" required/></div>
+        <div class="vfg"><label>Mobile number *</label><input name="mobile" type="tel" pattern="[0-9]{10}" placeholder="10-digit number" required/></div>
+        <div class="vfg"><label>Email *</label><input name="email" type="email" placeholder="you@email.com" required/></div>
+        <div class="vfg"><label>Date of birth *</label><input name="dob" type="date" required/></div>
+        <div class="vfg"><label>City *</label><input name="city" placeholder="Your city" required/></div>
+        <div class="vfg"><label>PIN code *</label><input name="pincode" pattern="[0-9]{6}" placeholder="6-digit PIN" required/></div>
+        <div class="vfg full"><label>Address *</label><input name="address" placeholder="Your address" required/></div>
+        <div class="vfg"><label>Monthly income (₹) *</label><input name="income" type="number" min="10000" placeholder="e.g. 35000" required/></div>
+        <div class="vfg"><label>Employment type *</label>
+          <div class="vradios">
+            <label class="vradio"><input type="radio" name="employment" value="Salaried" required/> Salaried</label>
+            <label class="vradio"><input type="radio" name="employment" value="Self-employed"/> Self-employed</label>
+            <label class="vradio"><input type="radio" name="employment" value="Other"/> Other</label>
+          </div>
+        </div>
+      </div>
+      <div class="vform-actions">
+        <button type="button" class="vbtn-outline" onclick="closeLeadModal()">Cancel</button>
+        <button type="submit" class="vbtn-primary" id="lead-submit-btn">Get my loan offers →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Success modal -->
+<div class="vmodal-overlay" id="lead-success">
+  <div class="vmodal" style="max-width:420px;text-align:center">
+    <div class="vsuccess-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <h2 style="text-align:center">Application received!</h2>
+    <p style="color:#5C6B6E;font-size:15px;margin:8px 0 1rem">Thank you for applying with Vyaaj. Our lending partners will be in touch shortly.</p>
+    <div style="background:#D7F4E9;border-radius:10px;padding:10px 14px;font-size:13px;color:#0D4A50;margin-bottom:1.5rem">You'll hear from us on the contact details you provided.</div>
+    <button class="vbtn-primary" style="width:100%" onclick="document.getElementById('lead-success').style.display='none'">Got it, thanks!</button>
+  </div>
+</div>
 </body>
 </html>
