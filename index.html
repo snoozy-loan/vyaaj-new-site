@@ -676,71 +676,7 @@
 </footer>
 
 <script>
-  // ---- Interactive offer finder ----
-  (function(){
-    var lenders = [
-      {name:'Bajaj Finance',        type:'NBFC', base:10.85},
-      {name:'Tata Capital',         type:'NBFC', base:11.99},
-      {name:'Poonawalla Fincorp',   type:'NBFC', base:12.99},
-      {name:'Aditya Birla Finance', type:'NBFC', base:13.99}
-    ];
-    var amountEl=document.getElementById('amount');
-    var tenureEl=document.getElementById('tenure');
-    var amountOut=document.getElementById('amountOut');
-    var tenureOut=document.getElementById('tenureOut');
-    var offersEl=document.getElementById('offers');
-    var purposeEl=document.getElementById('purpose');
-    var adj=0;
-
-    function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
-    function emi(P,annual,n){var r=annual/100/12; if(r===0) return P/n; var f=Math.pow(1+r,n); return P*r*f/(f-1);}
-
-    function tickFill(el){
-      var min=+el.min,max=+el.max,val=+el.value;
-      var pct=((val-min)/(max-min))*100;
-      el.style.background='linear-gradient(90deg, var(--teal) 0%, var(--teal) '+pct+'%, var(--mist) '+pct+'%, var(--mist) 100%)';
-    }
-
-    function render(){
-      var P=+amountEl.value, n=+tenureEl.value;
-      amountOut.textContent=inr(P);
-      tenureOut.textContent=n+' months';
-      tickFill(amountEl); tickFill(tenureEl);
-
-      var rows=lenders.map(function(l){
-        var apr=Math.max(7.5, l.base+adj);
-        return {name:l.name,type:l.type,apr:apr,emi:emi(P,apr,n)};
-      }).sort(function(a,b){return a.apr-b.apr;});
-
-      var highest=rows[rows.length-1].emi;
-      var best=rows[0];
-      var saving=(highest-best.emi)*n;
-
-      offersEl.innerHTML=rows.map(function(r,i){
-        var isBest=i===0;
-        var bestPill=isBest?'<span class="bestpill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Best match</span>':'';
-        var sub=isBest
-          ? '<div class="lsub">Save <b>'+inr(saving)+'</b> over '+n+' months vs the highest offer</div>'
-          : '<div class="lsub">'+r.type+'</div>';
-        return '<div class="offer'+(isBest?' best':'')+'">'+
-            '<div class="lender"><div class="lname">'+r.name+' '+bestPill+'</div>'+sub+'</div>'+
-            '<div class="rate"><div class="emi">'+inr(r.emi)+'</div><div class="emilab">per month</div>'+
-            '<div class="apr"><b>'+r.apr.toFixed(2)+'%</b> p.a.</div></div>'+
-          '</div>';
-      }).join('');
-    }
-
-    amountEl.addEventListener('input',render);
-    tenureEl.addEventListener('input',render);
-    purposeEl.addEventListener('click',function(e){
-      var b=e.target.closest('.chip'); if(!b) return;
-      purposeEl.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false');});
-      b.setAttribute('aria-pressed','true');
-      adj=parseFloat(b.dataset.adj)||0;
-      render();
-    });
-    render();
-  })();
+  // offer finder removed
 
   // ---- Scroll reveal ----
   (function(){
